@@ -1,0 +1,33 @@
+.split {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 46px;
+  align-items: center;
+}
+
+.quotePanel {
+  border-radius: var(--radius-lg);
+  background: var(--cream-2);
+  padding: 40px;
+  box-shadow: var(--shadow-strong);
+}
+
+.quotePanel blockquote {
+  margin: 0;
+  font-family: var(--font-serif);
+  color: var(--plum-deep);
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.quotePanel p {
+  margin-top: 22px;
+  color: var(--muted);
+}
+
+@media (max-width: 980px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+}

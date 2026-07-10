@@ -1,0 +1,33 @@
+:root {
+  /* Paleta oficial MarIA Consultoria */
+  --plum: #5b3a5e;
+  --plum-deep: #3b1d3f;
+  --lavender: #b79ac8;
+  --lavender-soft: #ece3f1;
+  --blush: #f3d7cf;
+  --rose: #d9b8c3;
+  --cream: #fff9f6;
+  --cream-2: #fff3ee;
+  --charcoal: #2e2a2f;
+  --muted: #766d78;
+
+  /* Tokens derivados (implementação, não fazem parte da paleta de marca) */
+  --line: rgba(91, 58, 94, 0.14);
+  --line-strong: rgba(91, 58, 94, 0.22);
+  --shadow-soft: 0 18px 54px rgba(59, 29, 63, 0.06);
+  --shadow-strong: 0 24px 80px rgba(59, 29, 63, 0.14);
+  --radius-sm: 16px;
+  --radius-md: 24px;
+  --radius-lg: 32px;
+  --radius-xl: 44px;
+  --radius-pill: 999px;
+  --container-max: 1160px;
+
+  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+
+  --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --duration-reveal: 700ms;
+  --duration-fast: 220ms;
+}

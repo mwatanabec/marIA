@@ -1,0 +1,293 @@
+.wrap {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.graphCard {
+  position: relative;
+  border-radius: var(--radius-lg);
+  padding: 12px;
+  background: radial-gradient(
+      circle at 20% 15%,
+      rgba(183, 154, 200, 0.14),
+      transparent 45%
+    ),
+    radial-gradient(circle at 85% 85%, rgba(243, 215, 207, 0.2), transparent 45%),
+    rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+}
+
+/* ---------- Arestas ---------- */
+.edge {
+  stroke: var(--plum);
+  stroke-opacity: 0.13;
+  stroke-width: 0.9;
+  stroke-linecap: round;
+  transition: stroke-opacity 320ms var(--ease-soft),
+    stroke-width 320ms var(--ease-soft), stroke 320ms var(--ease-soft);
+}
+
+.edgeLit {
+  stroke: var(--lavender);
+  stroke-opacity: 0.85;
+  stroke-width: 1.2;
+}
+
+.edgeDim {
+  stroke-opacity: 0.04;
+}
+
+/* ---------- Nós ---------- */
+.node {
+  cursor: grab;
+  outline: none;
+}
+
+.node:active {
+  cursor: grabbing;
+}
+
+.hit {
+  fill: transparent;
+}
+
+.halo {
+  fill: var(--cream);
+  opacity: 0.85;
+}
+
+.dot {
+  stroke: rgba(59, 29, 63, 0.28);
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform var(--duration-fast) var(--ease-soft),
+    stroke-width var(--duration-fast) var(--ease-soft);
+}
+
+.typeCore .dot {
+  fill: var(--plum-deep);
+}
+.typeMethod .dot {
+  fill: var(--lavender);
+}
+.typeService .dot {
+  fill: var(--plum);
+}
+.typeCase .dot {
+  fill: var(--rose);
+  stroke: rgba(59, 29, 63, 0.4);
+}
+.typeDifferential .dot {
+  fill: var(--lavender);
+}
+
+.node.isActive .dot {
+  transform: scale(1.32);
+  stroke: var(--plum-deep);
+  stroke-width: 2;
+}
+
+.node.isSelected .dot {
+  stroke: var(--plum-deep);
+  stroke-width: 2.4;
+}
+
+.node.isDim {
+  opacity: 0.26;
+}
+
+.node:focus-visible .dot {
+  stroke: var(--plum-deep);
+  stroke-width: 3;
+}
+
+.node,
+.label {
+  transition: opacity var(--duration-fast) var(--ease-soft);
+}
+
+/* ---------- Rótulos ---------- */
+.label {
+  fill: var(--charcoal);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  text-anchor: middle;
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: var(--cream);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.labelPrimary {
+  font-size: 15px;
+  fill: var(--plum-deep);
+}
+
+.labelSecondary {
+  font-size: 12.5px;
+  opacity: 0;
+}
+
+.labelShown {
+  opacity: 1;
+}
+
+/* ---------- Painel de detalhe ---------- */
+.panel {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  background: var(--cream-2);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+}
+
+.tag {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 5px 11px;
+  border-radius: var(--radius-pill);
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.tag.typeCore {
+  background: var(--plum-deep);
+}
+.tag.typeMethod {
+  background: var(--plum);
+}
+.tag.typeService {
+  background: var(--plum);
+}
+.tag.typeCase {
+  background: var(--rose);
+  color: var(--plum-deep);
+}
+.tag.typeDifferential {
+  background: var(--lavender);
+  color: var(--plum-deep);
+}
+
+.panelTitle {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+}
+
+.panelText {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.connections {
+  margin-top: 22px;
+}
+
+.connLabel {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--lavender);
+  margin-bottom: 12px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 650;
+  color: var(--plum-deep);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: 7px 13px;
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease-soft),
+    border-color var(--duration-fast) var(--ease-soft),
+    background var(--duration-fast) var(--ease-soft);
+}
+
+.chip:hover,
+.chip:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+  background: #fff;
+}
+
+.hint {
+  margin-top: auto;
+  padding-top: 22px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .hint {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .graphCard,
+  .panel {
+    border-radius: var(--radius-md);
+  }
+
+  /* Menos padding no mobile devolve largura para o grafo. */
+  .graphCard {
+    padding: 6px;
+  }
+
+  .panel {
+    padding: 22px;
+  }
+
+  /* Como o viewBox (1000) é reduzido para ~320px na tela, os textos precisam
+     de tamanhos maiores em unidades de viewBox para continuarem legíveis. */
+  .labelPrimary {
+    font-size: 26px;
+  }
+
+  .labelSecondary {
+    font-size: 22px;
+  }
+
+  /* Traços um pouco mais fortes para compensar a redução de escala. */
+  .edge {
+    stroke-width: 1.3;
+  }
+
+  .edgeLit {
+    stroke-width: 1.8;
+  }
+}

@@ -1,0 +1,126 @@
+/* 9.1 Entrada suave das seções */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--duration-reveal) var(--ease-soft),
+    transform var(--duration-reveal) var(--ease-soft);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 9.3 Linhas de conexão animadas — usa pathLength={1} no SVG para
+   normalizar o comprimento, então o dash funciona em qualquer path */
+.draw-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 2200ms var(--ease-soft);
+}
+
+.is-visible .draw-line {
+  stroke-dashoffset: 0;
+}
+
+.draw-line:nth-of-type(2) {
+  transition-delay: 260ms;
+}
+
+/* 9.4 Nós pulsando discretamente */
+@keyframes node-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+.node-pulse {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: node-pulse 3.4s ease-in-out infinite;
+}
+
+/* 9.5 Hero visual com movimento respirado */
+@keyframes float-breathe {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.float-breathe {
+  animation: float-breathe 6.5s ease-in-out infinite;
+}
+
+/* 9.6 Barras do dashboard crescendo */
+.bar {
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 900ms var(--ease-soft);
+}
+
+.is-visible .bar {
+  transform: scaleY(1);
+}
+
+/* 9.2 Cards com microinteração */
+.card-hover {
+  transition: transform var(--duration-fast) var(--ease-soft),
+    box-shadow var(--duration-fast) var(--ease-soft),
+    border-color var(--duration-fast) var(--ease-soft);
+}
+
+.card-hover:hover,
+.card-hover:focus-within {
+  transform: translateY(-4px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-strong);
+}
+
+/* 9.8 Botões */
+.btn-motion {
+  transition: transform var(--duration-fast) var(--ease-soft),
+    box-shadow var(--duration-fast) var(--ease-soft);
+}
+
+.btn-motion:hover {
+  transform: translateY(-2px);
+}
+
+/* 9.7 Header sticky com transição */
+.header-shell {
+  transition: box-shadow var(--duration-fast) var(--ease-soft),
+    padding var(--duration-fast) var(--ease-soft),
+    background var(--duration-fast) var(--ease-soft);
+}
+
+/* 10. Acessibilidade das animações — obrigatório */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .draw-line {
+    stroke-dashoffset: 0;
+  }
+
+  .bar {
+    transform: scaleY(1);
+  }
+}

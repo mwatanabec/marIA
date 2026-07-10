@@ -1,0 +1,111 @@
+.hero {
+  padding: 98px 0 76px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.copy > p {
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.24rem);
+  max-width: 720px;
+  margin-top: 24px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.proof {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 42px;
+  max-width: 780px;
+}
+
+.proofCard {
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-sm);
+  padding: 17px;
+  min-height: 118px;
+}
+
+.proofCard strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--plum-deep);
+  margin-bottom: 7px;
+}
+
+.proofCard span {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.visual {
+  position: relative;
+  min-height: 560px;
+}
+
+.floatingCard {
+  position: absolute;
+  right: -10px;
+  bottom: 34px;
+  width: 250px;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: 0 20px 54px rgba(59, 29, 63, 0.16);
+  z-index: 3;
+}
+
+.floatingCard strong {
+  color: var(--plum-deep);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.floatingCard span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    min-height: auto;
+  }
+
+  .floatingCard {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 16px;
+    width: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 64px 0 48px;
+  }
+
+  .proof {
+    grid-template-columns: 1fr;
+  }
+}
