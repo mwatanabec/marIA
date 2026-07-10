@@ -1,8 +1,9 @@
 export const nav = [
   { label: "Dores", href: "#dores" },
   { label: "Método", href: "#metodo" },
+  { label: "Sobre", href: "#sobre" },
   { label: "Serviços", href: "#servicos" },
-  { label: "Cases", href: "#cases" },
+  { label: "Projetos", href: "#projetos" },
   { label: "Contato", href: "#contato" },
 ];
 
@@ -132,56 +133,69 @@ export const differentials = {
   ],
 };
 
+export const about = {
+  eyebrow: "Quem conduz a MarIA",
+  title: "Uma pessoa que conecta negócio e tecnologia — não uma caixa-preta de IA.",
+  paragraphs: [
+    "A MarIA é conduzida por Maria Eduarda, profissional que une visão de negócio e tecnologia: entende a operação de perto, estrutura regras que hoje só existem na cabeça das pessoas, documenta processos e transforma dores operacionais em soluções digitais.",
+    "Antes de qualquer automação ou modelo de IA, existe entendimento real do problema, das pessoas envolvidas e do risco de cada decisão — para que a tecnologia sirva ao negócio, e não o contrário.",
+  ],
+  highlights: [
+    "Conecta negócio e tecnologia em uma mesma visão.",
+    "Estrutura regras e formaliza conhecimento hoje informal.",
+    "Documenta decisões, riscos e processos durante toda a entrega.",
+    "Transforma dores operacionais em soluções digitais sob medida.",
+  ],
+  quote: "Documentação não é um subproduto. É parte da entrega.",
+  role: "Maria Eduarda",
+  roleNote: "Fundadora da MarIA Consultoria",
+};
+
 export const services = {
   eyebrow: "Serviços",
-  title: "Da organização do processo à solução digital funcionando.",
+  title: "Cinco pacotes para levar sua operação do diagnóstico à solução em produção.",
   intro:
-    "Os serviços podem ser contratados de forma independente ou combinados em uma jornada completa de transformação.",
+    "Cada pacote pode ser contratado de forma independente ou combinado em uma jornada completa — do primeiro diagnóstico até a capacitação do seu time.",
   cards: [
     {
-      number: "01 · Diagnóstico",
-      title: "Processos e oportunidades de IA",
-      text: "Identificação de gargalos, retrabalho, oportunidades de automação e priorização de iniciativas.",
+      number: "Pacote 01",
+      title: "Diagnóstico MarIA",
+      text: "Identificação de gargalos, retrabalho e oportunidades de automação, com priorização clara do que atacar primeiro.",
       items: ["Mapa do processo atual", "Matriz impacto × esforço", "Plano de ação"],
     },
     {
-      number: "02 · Estruturação",
-      title: "Regras, documentação e desenho de solução",
+      number: "Pacote 02",
+      title: "Estruturação de Processos",
       text: "Formalização do que hoje está disperso em pessoas, planilhas, mensagens e decisões informais.",
       items: ["Regras de negócio", "Fluxos e responsabilidades", "Requisitos funcionais"],
     },
     {
-      number: "03 · Construção",
-      title: "Automação e soluções digitais sob medida",
-      text: "Prototipação e construção incremental de dashboards, portais, controles e sistemas internos.",
+      number: "Pacote 03",
+      title: "Projeto Sob Medida",
+      text: "Prototipação e construção incremental de dashboards, portais, automações e sistemas internos sob medida para a operação.",
       items: ["Dashboards e portais", "Automações e integrações", "Implantação e treinamento"],
     },
     {
-      number: "04 · IA aplicada",
-      title: "Implantação responsável de IA",
-      text: "Definição de casos de uso, boas práticas, governança inicial e capacitação para uso prático.",
+      number: "Pacote 04",
+      title: "IA Aplicada",
+      text: "Definição de casos de uso, boas práticas, governança inicial e capacitação para uso prático da IA.",
       items: ["Mapa de casos de uso", "Guia de boas práticas", "Treinamento executivo ou operacional"],
     },
     {
-      number: "05 · Capacitação",
-      title: "Workshops e mentorias",
+      number: "Pacote 05",
+      title: "Capacitação",
       text: "Oficinas para líderes e times que querem aplicar IA, automação e documentação em situações reais.",
       items: ["Workshop prático", "Mentoria de projetos", "Playbooks de uso"],
     },
-    {
-      number: "06 · Continuidade",
-      title: "Acompanhamento e evolução",
-      text: "Validação do uso real, priorização de melhorias e evolução da solução conforme o processo amadurece.",
-      items: ["Roadmap de melhorias", "Acompanhamento de adoção", "Correção de gaps"],
-    },
   ],
+  note: "Acompanhamento e evolução contínua da solução podem ser incluídos em qualquer pacote, sob demanda.",
 };
 
-export const cases = {
-  eyebrow: "Cases anonimizados",
+export const projects = {
+  eyebrow: "Projetos anonimizados",
   title: "Experiências que mostram método, tecnologia e impacto operacional.",
   intro:
-    "Os exemplos devem ser apresentados de forma anonimizada, preservando dados, marcas e informações internas das organizações envolvidas.",
+    "Os exemplos são apresentados de forma anonimizada, preservando dados, marcas e informações internas das organizações envolvidas.",
   cards: [
     {
       tag: "Governança",
@@ -216,7 +230,7 @@ export const finalCta = {
   title: "Vamos organizar o próximo processo que precisa virar solução?",
   subtext:
     "Comece com uma conversa para entender a dor, o contexto e as oportunidades mais relevantes para a sua empresa.",
-  ctaPrimary: { label: "Agendar conversa", href: "mailto:contato@mariaconsultoria.com.br" },
+  ctaPrimary: { label: "Agendar conversa" },
   ctaSecondary: { label: "Rever serviços", href: "#servicos" },
 };
 
@@ -235,7 +249,7 @@ export const siteMeta = {
 /**
  * Grafo de conhecimento da plataforma MarIA (estilo Obsidian Graph View).
  * Cada nó tem posição fixa e curada num viewBox 1000×620. As arestas contam a
- * história: núcleo → método/serviços/diferenciais → e os cases conectados ao
+ * história: núcleo → método/serviços/diferenciais → e os projetos conectados ao
  * método e serviço que os produziram. Descrições reutilizam a copy oficial.
  */
 export type GraphNodeType = "core" | "method" | "service" | "case" | "differential";
@@ -253,10 +267,11 @@ export type GraphNode = {
 
 export const platformGraph = {
   eyebrow: "Mapa da plataforma",
-  title: "Método, serviços e cases — conectados em um só mapa.",
+  title: "Método, serviços e projetos — conectados em um só mapa.",
   intro:
     "Cada peça da MarIA conversa com as outras. Passe o mouse ou toque em um nó para ver como o método, os serviços e os resultados reais se conectam.",
   hint: "Dica: arraste os nós para reorganizar o mapa.",
+  hintTouch: "Dica: toque em um nó para ver os detalhes da conexão.",
   defaultId: "maria",
   nodes: [
     {
@@ -301,41 +316,40 @@ export const platformGraph = {
     { id: "registrar", label: "Registrar", type: "method", primary: false, x: 130, y: 375, description: method.steps[2].text },
     { id: "implementar", label: "Implementar", type: "method", primary: false, x: 215, y: 450, description: method.steps[3].text },
     { id: "acompanhar", label: "Acompanhar", type: "method", primary: false, x: 330, y: 440, description: method.steps[4].text },
-    { id: "diagnostico", label: "Diagnóstico", type: "service", primary: false, x: 880, y: 150, description: services.cards[0].text },
-    { id: "estruturacao", label: "Estruturação", type: "service", primary: false, x: 905, y: 265, description: services.cards[1].text },
-    { id: "construcao", label: "Construção", type: "service", primary: false, x: 870, y: 375, description: services.cards[2].text },
-    { id: "iaAplicada", label: "IA aplicada", type: "service", primary: false, x: 785, y: 450, description: services.cards[3].text },
-    { id: "capacitacao", label: "Capacitação", type: "service", primary: false, x: 670, y: 445, description: services.cards[4].text },
-    { id: "continuidade", label: "Continuidade", type: "service", primary: false, x: 945, y: 360, description: services.cards[5].text },
+    { id: "diagnostico", label: "Diagnóstico", detailTitle: services.cards[0].title, type: "service", primary: false, x: 880, y: 150, description: services.cards[0].text },
+    { id: "estruturacao", label: "Estruturação", detailTitle: services.cards[1].title, type: "service", primary: false, x: 905, y: 265, description: services.cards[1].text },
+    { id: "construcao", label: "Sob medida", detailTitle: services.cards[2].title, type: "service", primary: false, x: 870, y: 375, description: services.cards[2].text },
+    { id: "iaAplicada", label: "IA aplicada", detailTitle: services.cards[3].title, type: "service", primary: false, x: 785, y: 450, description: services.cards[3].text },
+    { id: "capacitacao", label: "Capacitação", detailTitle: services.cards[4].title, type: "service", primary: false, x: 670, y: 445, description: services.cards[4].text },
     {
       id: "caseA",
       label: "Plataforma interna",
-      detailTitle: cases.cards[0].title,
+      detailTitle: projects.cards[0].title,
       type: "case",
       primary: true,
       x: 375,
       y: 530,
-      description: cases.cards[0].text,
+      description: projects.cards[0].text,
     },
     {
       id: "caseB",
       label: "Conciliação",
-      detailTitle: cases.cards[1].title,
+      detailTitle: projects.cards[1].title,
       type: "case",
       primary: true,
       x: 500,
       y: 565,
-      description: cases.cards[1].text,
+      description: projects.cards[1].text,
     },
     {
       id: "caseC",
       label: "Método com IA",
-      detailTitle: cases.cards[2].title,
+      detailTitle: projects.cards[2].title,
       type: "case",
       primary: true,
       x: 625,
       y: 530,
-      description: cases.cards[2].text,
+      description: projects.cards[2].text,
     },
   ] as GraphNode[],
   edges: [
@@ -353,7 +367,6 @@ export const platformGraph = {
     ["servicos", "construcao"],
     ["servicos", "iaAplicada"],
     ["servicos", "capacitacao"],
-    ["servicos", "continuidade"],
     ["diferenciais", "caseA"],
     ["diferenciais", "caseB"],
     ["diferenciais", "caseC"],
@@ -368,7 +381,7 @@ export const platformGraph = {
     core: "Núcleo",
     method: "Método",
     service: "Serviço",
-    case: "Case",
+    case: "Projeto",
     differential: "Diferencial",
   } as Record<GraphNodeType, string>,
 };

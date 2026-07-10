@@ -1,0 +1,70 @@
+.split {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 46px;
+  align-items: center;
+}
+
+.paragraph {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 1.04rem;
+}
+
+.paragraph + .paragraph {
+  margin-top: 14px;
+}
+
+.profileCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  background: var(--cream-2);
+  padding: 40px;
+  box-shadow: var(--shadow-strong);
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--plum-deep), var(--plum));
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  box-shadow: 0 12px 28px rgba(59, 29, 63, 0.24);
+  margin-bottom: 18px;
+}
+
+.name {
+  font-family: var(--font-serif);
+  color: var(--plum-deep);
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+}
+
+.roleNote {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-top: 4px;
+}
+
+.quote {
+  margin: 24px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-serif);
+  color: var(--plum-deep);
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 980px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+}

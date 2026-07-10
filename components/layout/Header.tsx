@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { nav } from "@/content/copy";
+import { getScheduleHref } from "@/content/contact";
 import { Button } from "@/components/ui/Button";
 import styles from "./Header.module.css";
 
@@ -41,7 +42,7 @@ export function Header() {
         </div>
 
         <div className={styles.headerCta}>
-          <Button href="#contato" variant="primary">
+          <Button href={getScheduleHref()} variant="primary">
             Agendar conversa
           </Button>
         </div>
@@ -71,7 +72,7 @@ export function Header() {
           </a>
         ))}
         <div className={styles.mobileCta}>
-          <Button href="#contato" variant="primary" className="mobile-cta-btn">
+          <Button href={getScheduleHref()} variant="primary" className="mobile-cta-btn">
             Agendar conversa
           </Button>
         </div>

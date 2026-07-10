@@ -38,7 +38,16 @@ export function PlatformGraph() {
 
   const [hovered, setHovered] = useState<string | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
+  const [coarsePointer, setCoarsePointer] = useState(false);
   const active = hovered ?? selected;
+
+  useEffect(() => {
+    const query = window.matchMedia("(pointer: coarse)");
+    setCoarsePointer(query.matches);
+    const onChange = (e: MediaQueryListEvent) => setCoarsePointer(e.matches);
+    query.addEventListener("change", onChange);
+    return () => query.removeEventListener("change", onChange);
+  }, []);
 
   const svgRef = useRef<SVGSVGElement | null>(null);
   const nodeRefs = useRef<Record<string, SVGGElement | null>>({});
@@ -181,7 +190,7 @@ export function PlatformGraph() {
   );
 
   return (
-    <section id="cases" className="section" aria-labelledby="graph-heading">
+    <section id="projetos" className="section" aria-labelledby="graph-heading">
       <div className="container">
         <SectionReveal className="section-head">
           <div>
@@ -312,7 +321,9 @@ export function PlatformGraph() {
               </div>
             ) : null}
 
-            <p className={styles.hint}>{platformGraph.hint}</p>
+            <p className={styles.hint}>
+              {coarsePointer ? platformGraph.hintTouch : platformGraph.hint}
+            </p>
           </aside>
         </SectionReveal>
       </div>

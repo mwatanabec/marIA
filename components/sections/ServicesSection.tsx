@@ -16,9 +16,9 @@ export function ServicesSection() {
           <p>{services.intro}</p>
         </SectionReveal>
 
-        <SectionReveal className="grid-3">
+        <SectionReveal className={styles.grid}>
           {services.cards.map((card) => (
-            <Card key={card.title} eyebrow={card.number} title={card.title}>
+            <Card key={card.title} eyebrow={card.number} eyebrowVariant="tag" title={card.title}>
               <p>{card.text}</p>
               <ul className={styles.serviceList}>
                 {card.items.map((item) => (
@@ -27,6 +27,10 @@ export function ServicesSection() {
               </ul>
             </Card>
           ))}
+        </SectionReveal>
+
+        <SectionReveal>
+          <p className={styles.note}>{services.note}</p>
         </SectionReveal>
       </div>
     </section>

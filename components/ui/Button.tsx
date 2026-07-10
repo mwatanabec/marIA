@@ -26,8 +26,15 @@ export function Button({
     .filter(Boolean)
     .join(" ");
 
+  const isExternal = /^https?:\/\//.test(href);
+
   return (
-    <a className={classes} href={href}>
+    <a
+      className={classes}
+      href={href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+    >
       {children}
     </a>
   );

@@ -5,6 +5,7 @@ import { Hero } from "@/components/sections/Hero";
 import { PainSection } from "@/components/sections/PainSection";
 import { MethodSection } from "@/components/sections/MethodSection";
 import { DifferentialsSection } from "@/components/sections/DifferentialsSection";
+import { AboutSection } from "@/components/sections/AboutSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { PlatformGraph } from "@/components/sections/PlatformGraph";
 import { FinalCTA } from "@/components/sections/FinalCTA";
@@ -19,6 +20,7 @@ export default function Home() {
         <PainSection />
         <MethodSection />
         <DifferentialsSection />
+        <AboutSection />
         <ServicesSection />
         <PlatformGraph />
         <FinalCTA />
