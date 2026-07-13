@@ -1,6 +1,7 @@
 export const nav = [
   { label: "Início", href: "/" },
   { label: "Serviços", href: "/servicos" },
+  { label: "Projetos", href: "/projetos" },
 ];
 
 export const hero = {
@@ -187,6 +188,46 @@ export const services = {
   note: "Acompanhamento e evolução contínua da solução podem ser incluídos em qualquer pacote, sob demanda.",
 };
 
+/**
+ * Resumo das frentes na Home. Objetivo: posicionamento e conversão — não repete
+ * o conteúdo completo de /servicos (ver `servicesPage`). São 4 cards principais;
+ * a 5ª frente ("Acompanhamento e Evolução") aparece só como frase complementar
+ * (`note`). Os glyphs espelham os das frentes em /servicos para dar continuidade
+ * visual. O objeto `services` acima segue existindo para o Mapa da plataforma.
+ */
+export const homeServices = {
+  eyebrow: "Serviços",
+  title: "Como a MarIA pode ajudar",
+  subtitle:
+    "IA prática para equipes, soluções digitais para processos reais e produtos internos sob medida.",
+  support:
+    "A MarIA Consultoria atua em diferentes níveis: capacitando pessoas para usar IA no trabalho, apoiando times técnicos a aplicar IA com método, criando automações simples e construindo produtos internos para dores operacionais mais complexas.",
+  cards: [
+    {
+      icon: "✦",
+      title: "Capacitação em IA",
+      text: "Workshops, palestras e treinamentos para equipes que querem usar IA no dia a dia com mais clareza, produtividade e responsabilidade.",
+    },
+    {
+      icon: "⌘",
+      title: "IA para Times Técnicos",
+      text: "Mentorias e capacitações para TI, controladoria, dados e áreas analíticas aplicarem IA em automações, documentação, planilhas, desenvolvimento e projetos internos.",
+    },
+    {
+      icon: "▣",
+      title: "Produtos Internos Sob Medida",
+      text: "Criação de soluções digitais internas para empresas que precisam transformar processos críticos, planilhas e controles descentralizados em produtos rastreáveis e evolutivos.",
+    },
+    {
+      icon: "↻",
+      title: "Automações e Sistemas Simples",
+      text: "Soluções leves para pequenos negócios ou áreas que precisam organizar pedidos, clientes, estoque, tarefas, indicadores ou rotinas administrativas.",
+    },
+  ],
+  note: "Depois da implantação ou capacitação, a MarIA também pode acompanhar a evolução das iniciativas com mentorias, priorização de melhorias e apoio contínuo.",
+  cta: { label: "Conhecer todos os serviços", href: "/servicos" },
+};
+
 export const projects = {
   eyebrow: "Projetos anonimizados",
   title: "Experiências que mostram método, tecnologia e impacto operacional.",
@@ -220,6 +261,124 @@ export const projects = {
       items: ["Menos retrabalho.", "Mais previsibilidade.", "Conhecimento preservado."],
     },
   ],
+};
+
+/**
+ * Página dedicada /projetos — estrutura inicial. Reaproveita os cases
+ * anonimizados de `projects` (grid + hero) e segue o mesmo padrão de /servicos:
+ * hero "capa escura" + seções modulares + FinalCTA. A copy de meta/hero/finalCta
+ * vive aqui para poder evoluir sem tocar nos componentes. Próximo passo (outro
+ * chat): aprofundar cases, adicionar novos e refinar o layout.
+ */
+export const projectsPage = {
+  meta: {
+    title: "Projetos | MarIA Consultoria",
+    description:
+      "Experiências anonimizadas que mostram método, tecnologia e impacto operacional — de plataformas internas a projetos com IA aplicada.",
+  },
+  hero: {
+    eyebrow: "Projetos e experiências",
+    title: "Projetos que mostram método, tecnologia e impacto real.",
+    subtitle:
+      "Experiências desenvolvidas em organização de processos, automação e IA aplicada.",
+    support:
+      "Os projetos são apresentados de forma anonimizada, como demonstração de capacidade técnica, visão de processo e execução — sem expor dados, marcas ou ativos internos das organizações envolvidas.",
+    ctaPrimary: {
+      label: "Conversar sobre um desafio parecido",
+      message:
+        "Olá! Vim pela página de Projetos da MarIA Consultoria e gostaria de conversar sobre um desafio parecido na minha empresa.",
+    },
+    ctaSecondary: { label: "Ver projetos", href: "#projetos" },
+  },
+  cases: {
+    eyebrow: "Portfólio",
+    title: "Projetos anonimizados, do desafio ao impacto.",
+    intro:
+      "Experiências apresentadas de forma anonimizada, do desafio ao resultado, para demonstrar capacidade técnica, visão de processo e execução — sem expor dados, marcas ou ativos internos das organizações envolvidas.",
+    contextLabel: "Contexto",
+    problemLabel: "Desafio",
+    solutionLabel: "Solução",
+    deliverablesLabel: "Principais entregas",
+    impactLabel: "Impacto",
+    draftLabel: "Rascunho · revisar",
+    items: [
+      {
+        id: "conciliador-de-estoque",
+        glyph: "▦",
+        draft: false,
+        title: "Conciliador de Estoque",
+        category: "Produto interno · Logística",
+        subtitle:
+          "Produto interno para padronização, rastreabilidade e gestão da conciliação entre a visão do cliente e a visão do WMS.",
+        tags: ["Produto interno", "Operações", "Logística", "Dados", "Automação", "Dashboard", "WMS"],
+        reviewNote: "",
+        context:
+          "Operação logística multifilial com a necessidade de conciliar o estoque entre a visão do cliente e a visão registrada no WMS. A oportunidade era trazer mais padronização, rastreabilidade, visão gerencial e acompanhamento estruturado de um processo recorrente entre várias unidades.",
+        problem:
+          "A conciliação de estoque é um processo crítico para a operação. Com múltiplas unidades, clientes e formatos de arquivo, era preciso centralizar informações, acompanhar aderência, medir acuracidade, controlar metas e SLA e registrar divergências de forma padronizada — reduzindo a dependência de controles manuais dispersos.",
+        solution:
+          "Foi desenvolvido um produto interno, hoje em produção: uma plataforma web corporativa que importa e normaliza os arquivos, aplica a lógica de conciliação entre cliente e WMS, mantém o histórico das execuções e consolida tudo em dashboards executivos com indicadores de aderência, acuracidade, metas e SLA.",
+        deliverables: [
+          "Plataforma web corporativa em produção (backend, frontend e banco de dados).",
+          "Controle de acesso por perfil.",
+          "Importação e normalização de arquivos de diferentes formatos.",
+          "Lógica de conciliação entre a visão do cliente e o WMS.",
+          "Histórico de execuções e gestão de divergências e ocorrências.",
+          "Dashboards executivos com aderência, acuracidade, metas e SLA.",
+          "Deploy em servidor, com evolução acompanhada pelo uso real das filiais.",
+        ],
+        impact: [
+          "Mais rastreabilidade em um processo crítico da operação.",
+          "Visão gerencial padronizada entre as unidades.",
+          "Menor dependência de controles manuais dispersos.",
+          "Base estruturada e preparada para evolução contínua.",
+        ],
+      },
+      {
+        // Case CIOT — apresentado de forma anonimizada, como demonstração de
+        // capacidade. Texto validado.
+        id: "ciot",
+        glyph: "◫",
+        draft: false,
+        title: "CIOT",
+        category: "Automação · Transporte",
+        subtitle:
+          "Solução digital para organizar e automatizar o processo de CIOT em operações de transporte, com mais rastreabilidade e conformidade.",
+        tags: ["Automação", "Transporte", "Operações", "Dados", "Compliance", "Integração", "Processo"],
+        reviewNote: "",
+        context:
+          "Ambiente corporativo de logística e transporte, em que a operação envolvendo o CIOT (Código Identificador da Operação de Transporte) fazia parte de uma rotina recorrente, relacionada às áreas operacionais e de transporte e à contratação e ao pagamento de frete.",
+        problem:
+          "Processo apoiado em etapas manuais e controles descentralizados, com baixa rastreabilidade, risco de retrabalho e dificuldade de consulta, acompanhamento e conferência das operações.",
+        solution:
+          "Solução digital para organizar e automatizar o processo de CIOT — centralizando registros, padronizando o fluxo e facilitando a consulta, o acompanhamento e a conferência das operações de transporte.",
+        deliverables: [
+          "Fluxo digital padronizado para o processo de CIOT.",
+          "Centralização dos registros e histórico das operações.",
+          "Automação de etapas manuais e conferências.",
+          "Integração com sistemas de transporte e contratação de frete.",
+          "Painel de acompanhamento, consulta e indicadores.",
+        ],
+        impact: [
+          "Mais rastreabilidade e conformidade no processo.",
+          "Redução de retrabalho e de controles manuais.",
+          "Consulta e acompanhamento mais ágeis.",
+          "Processo padronizado e auditável.",
+        ],
+      },
+    ],
+  },
+  finalCta: {
+    title: "Tem um desafio parecido na sua operação?",
+    subtext:
+      "Comece com uma conversa para entender a dor, o contexto e o caminho mais adequado para a sua operação.",
+    ctaPrimary: {
+      label: "Agendar conversa",
+      message:
+        "Olá! Vim pela página de Projetos da MarIA Consultoria e gostaria de agendar uma conversa.",
+    },
+    ctaSecondary: { label: "Conhecer os serviços", href: "/servicos" },
+  },
 };
 
 export const finalCta = {

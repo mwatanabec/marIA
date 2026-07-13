@@ -1,0 +1,140 @@
+/* Hero "capa escura": mesma assinatura da página de Serviços, sinalizando a
+   troca de página. Copy à esquerda, painel de cases à direita (motivo de rede). */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 108px 0 84px;
+  background: radial-gradient(
+      circle at 84% 12%,
+      rgba(183, 154, 200, 0.34),
+      transparent 42%
+    ),
+    radial-gradient(circle at 8% 90%, rgba(243, 215, 207, 0.18), transparent 40%),
+    linear-gradient(150deg, var(--plum) 0%, var(--plum-deep) 72%);
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  box-shadow: var(--shadow-strong);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.hero h1 {
+  color: #fff;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.94);
+  font-size: clamp(1.15rem, 2.1vw, 1.5rem);
+  font-weight: 600;
+  max-width: 34ch;
+  margin-top: 24px;
+}
+
+.support {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.05rem;
+  max-width: 56ch;
+  margin-top: 18px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+/* Painel lateral: lista os cases como "provas", espelhando o hero de Serviços */
+.panel {
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-lg);
+  padding: 28px 30px;
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+}
+
+.panel::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(183, 154, 200, 0.2);
+  right: -90px;
+  top: -90px;
+  pointer-events: none;
+}
+
+.panelHead {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--blush);
+  font-weight: 800;
+  font-size: 0.86rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.panelDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--blush);
+  box-shadow: 0 0 0 6px rgba(243, 215, 207, 0.2);
+  flex: 0 0 auto;
+}
+
+.panelList {
+  display: grid;
+  gap: 10px;
+}
+
+.panelItem {
+  display: grid;
+  gap: 4px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.panelTag {
+  color: var(--blush);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.panelTitle {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 92px 0 56px;
+    border-radius: 0 0 28px 28px;
+  }
+
+  .panel {
+    padding: 22px 20px;
+  }
+}

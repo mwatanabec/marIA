@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import styles from "./Button.module.css";
 
 type ButtonProps = {
@@ -25,6 +26,17 @@ export function Button({
   ]
     .filter(Boolean)
     .join(" ");
+
+  // Rotas internas (ex.: /servicos) passam pelo next/link para respeitar o
+  // basePath do build (ver next.config.mjs). Âncoras (#secao) e links externos
+  // (wa.me, mailto) seguem como <a> comum.
+  if (href.startsWith("/")) {
+    return (
+      <Link className={classes} href={href}>
+        {children}
+      </Link>
+    );
+  }
 
   const isExternal = /^https?:\/\//.test(href);
 
