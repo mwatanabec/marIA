@@ -1,12 +1,28 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { nav } from "@/content/copy";
 import { getScheduleHref } from "@/content/contact";
 import { Button } from "@/components/ui/Button";
 import styles from "./Header.module.css";
 
+/**
+ * Resolve o destino de cada item do menu levando em conta a página atual:
+ * âncoras (#secao) apontam para a seção na Home — de outra rota viram "/#secao"
+ * para navegar de volta e rolar. Rotas (/servicos) seguem inalteradas e o
+ * next/link cuida do basePath.
+ */
+function resolveHref(href: string, pathname: string): string {
+  if (href.startsWith("#")) {
+    return pathname === "/" ? href : `/${href}`;
+  }
+  return href;
+}
+
 export function Header() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -21,23 +37,30 @@ export function Header() {
     .filter(Boolean)
     .join(" ");
 
+  const isActive = (href: string) => !href.startsWith("#") && pathname === href;
+
   return (
     <header className={shellClass}>
       <nav className={styles.nav} aria-label="Navegação principal">
-        <a className={styles.brand} href="#">
+        <Link className={styles.brand} href="/">
           <span className={styles.brandMark} aria-hidden="true">
             M
           </span>
           <strong>
             Mar<span>IA</span> Consultoria
           </strong>
-        </a>
+        </Link>
 
         <div className={styles.navLinks}>
           {nav.map((item) => (
-            <a key={item.href} href={item.href}>
+            <Link
+              key={item.href}
+              href={resolveHref(item.href, pathname)}
+              className={isActive(item.href) ? styles.active : undefined}
+              aria-current={isActive(item.href) ? "page" : undefined}
+            >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -67,9 +90,15 @@ export function Header() {
 
       <div id="mobile-nav" className={`${styles.mobilePanel} ${menuOpen ? styles.open : ""}`}>
         {nav.map((item) => (
-          <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
+          <Link
+            key={item.href}
+            href={resolveHref(item.href, pathname)}
+            className={isActive(item.href) ? styles.active : undefined}
+            aria-current={isActive(item.href) ? "page" : undefined}
+            onClick={() => setMenuOpen(false)}
+          >
             {item.label}
-          </a>
+          </Link>
         ))}
         <div className={styles.mobileCta}>
           <Button href={getScheduleHref()} variant="primary" className="mobile-cta-btn">

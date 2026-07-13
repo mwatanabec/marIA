@@ -1,0 +1,142 @@
+.list {
+  display: grid;
+  gap: 22px;
+}
+
+.offering {
+  display: grid;
+  grid-template-columns: 0.95fr 1.15fr;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 38px;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+  /* Compensa o header sticky ao rolar até a âncora da frente */
+  scroll-margin-top: 96px;
+}
+
+.offering::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(183, 154, 200, 0.1);
+  right: -110px;
+  top: -110px;
+  pointer-events: none;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.glyph {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(183, 154, 200, 0.24), rgba(243, 215, 207, 0.32));
+  color: var(--plum);
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.number {
+  color: var(--plum);
+  background: rgba(183, 154, 200, 0.15);
+  border: 1px solid rgba(91, 58, 94, 0.1);
+  border-radius: var(--radius-pill);
+  padding: 6px 12px;
+  font-size: 0.74rem;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.desc {
+  color: var(--muted);
+  margin-top: 14px;
+  font-size: 1.02rem;
+}
+
+.meta {
+  margin-top: 22px;
+}
+
+.meta p {
+  color: var(--charcoal);
+  font-size: 0.98rem;
+}
+
+.miniLabel {
+  display: block;
+  color: var(--lavender);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.cta {
+  margin-top: 28px;
+}
+
+.lists {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-content: start;
+  padding-left: 40px;
+  border-left: 1px solid var(--line);
+}
+
+.listBlock :global(.dot-list) {
+  margin-top: 0;
+}
+
+.listBlock :global(.dot-list) li {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .offering {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .lists {
+    padding-left: 0;
+    border-left: none;
+    padding-top: 26px;
+    border-top: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 560px) {
+  .offering {
+    padding: 24px;
+    border-radius: var(--radius-md);
+  }
+
+  .lists {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

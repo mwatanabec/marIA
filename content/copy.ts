@@ -1,10 +1,6 @@
 export const nav = [
-  { label: "Dores", href: "#dores" },
-  { label: "Método", href: "#metodo" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Serviços", href: "#servicos" },
-  { label: "Projetos", href: "#projetos" },
-  { label: "Contato", href: "#contato" },
+  { label: "Início", href: "/" },
+  { label: "Serviços", href: "/servicos" },
 ];
 
 export const hero = {
@@ -232,6 +228,285 @@ export const finalCta = {
     "Comece com uma conversa para entender a dor, o contexto e as oportunidades mais relevantes para a sua empresa.",
   ctaPrimary: { label: "Agendar conversa" },
   ctaSecondary: { label: "Rever serviços", href: "#servicos" },
+};
+
+/**
+ * Página dedicada /servicos — aprofunda as frentes de atuação sem sobrecarregar
+ * a Home. A copy segue o tom maduro, humano e técnico da marca; os CTAs usam o
+ * mesmo canal de contato do site (getScheduleHref), com mensagem pré-preenchida.
+ */
+export const servicesPage = {
+  meta: {
+    title: "Serviços | MarIA Consultoria",
+    description:
+      "Capacitação em IA, automações para rotinas reais e produtos digitais sob medida. Conheça as frentes de atuação da MarIA Consultoria e descubra qual faz sentido para sua empresa.",
+  },
+  hero: {
+    eyebrow: "Frentes de atuação",
+    title: "Serviços da MarIA Consultoria",
+    subtitle:
+      "IA prática para equipes, automações para rotinas reais e soluções digitais para empresas que querem sair do improviso.",
+    support:
+      "A MarIA Consultoria ajuda empresas a aplicar IA, organizar processos e criar soluções digitais sob medida, sempre com clareza, método, documentação e validação humana.",
+    ctaPrimary: {
+      label: "Quero conversar sobre minha necessidade",
+      message:
+        "Olá! Vim pela página de Serviços da MarIA Consultoria e gostaria de conversar sobre uma necessidade da minha empresa.",
+    },
+    ctaSecondary: { label: "Ver frentes de atuação", href: "#frentes" },
+  },
+  intro: {
+    eyebrow: "Como a MarIA pode ajudar",
+    title: "Três níveis de ajuda, do primeiro passo ao produto interno.",
+    paragraphs: [
+      "Nem toda empresa precisa começar com um grande projeto de tecnologia. Algumas precisam primeiro capacitar seus times. Outras precisam automatizar rotinas simples. Outras já têm uma dor operacional relevante que pode virar um produto interno.",
+      "A MarIA atua nesses três níveis: ensinando pessoas a usar IA de forma prática, criando soluções digitais para processos reais e apoiando empresas na construção de produtos internos com método, documentação e evolução.",
+    ],
+    levels: [
+      {
+        step: "01",
+        title: "Capacitar pessoas",
+        text: "Times aprendem a usar IA de forma prática, segura e produtiva no trabalho real.",
+      },
+      {
+        step: "02",
+        title: "Criar soluções digitais",
+        text: "Automações, dashboards e sistemas que organizam rotinas e processos reais.",
+      },
+      {
+        step: "03",
+        title: "Construir produtos internos",
+        text: "Dores operacionais viram produtos com método, documentação e evolução por fases.",
+      },
+    ],
+  },
+  offerings: {
+    eyebrow: "Frentes de atuação",
+    title: "Cinco frentes para capacitar times, automatizar rotinas e criar soluções sob medida.",
+    intro:
+      "Cada frente pode ser contratada de forma independente ou combinada em uma jornada — da primeira capacitação até o produto interno em produção.",
+    audienceLabel: "Para quem é",
+    solvesLabel: "Problemas que resolve",
+    formatLabel: "Formato",
+    cards: [
+      {
+        id: "capacitacao-empresas",
+        glyph: "✦",
+        number: "Frente 01",
+        title: "Capacitação em IA para Empresas",
+        description:
+          "Treinamentos, palestras e workshops para equipes que querem aprender a usar IA no trabalho real, com exemplos práticos, linguagem acessível e foco em produtividade.",
+        audience:
+          "Usuários administrativos, lideranças, áreas operacionais, financeiro, RH, comercial, atendimento e equipes que ainda estão começando a usar IA.",
+        solves: [
+          "Pessoas usando IA de forma rasa ou insegura.",
+          "Dificuldade para transformar IA em produtividade real.",
+          "Falta de repertório prático.",
+          "Medo de usar IA por não saber limites e cuidados.",
+          "Baixa padronização no uso das ferramentas.",
+        ],
+        extra: {
+          title: "Exemplos de temas",
+          items: [
+            "Como usar IA para escrever e revisar e-mails.",
+            "Como resumir reuniões e documentos.",
+            "Como estruturar ideias e apresentações.",
+            "Como criar prompts melhores.",
+            "Como usar IA com responsabilidade.",
+            "Como ganhar produtividade no dia a dia.",
+          ],
+        },
+        format:
+          "Palestras, workshops práticos, treinamentos por turma ou programas de capacitação.",
+        cta: {
+          label: "Quero capacitar minha equipe",
+          message:
+            "Olá! Tenho interesse na Capacitação em IA para Empresas da MarIA Consultoria e gostaria de capacitar minha equipe.",
+        },
+      },
+      {
+        id: "times-tecnicos",
+        glyph: "⌘",
+        number: "Frente 02",
+        title: "IA para Times Técnicos e Áreas Analíticas",
+        description:
+          "Capacitação e mentoria para times que querem usar IA de forma mais avançada em automações, documentação, planilhas, análise de dados, desenvolvimento e construção de soluções internas.",
+        audience:
+          "Times de TI, controladoria, dados, automação, sistemas, processos, PMO e áreas analíticas.",
+        solves: [
+          "Times técnicos usando IA apenas para respostas simples.",
+          "Dificuldade em aplicar IA no desenvolvimento de soluções.",
+          "Falta de método para trabalhar com IA em projetos reais.",
+          "Retrabalho por ausência de documentação e validação.",
+          "Uso de IA sem critério técnico, revisão ou governança.",
+        ],
+        extra: {
+          title: "Exemplos de aplicação",
+          items: [
+            "Apoio com VS Code, Claude Code, ChatGPT e outras ferramentas.",
+            "Estruturação de requisitos com IA.",
+            "Documentação de regras de negócio.",
+            "Revisão de planilhas e automações.",
+            "Apoio na criação de sistemas internos.",
+            "Trabalho em lotes, testes, validação e registro de decisões.",
+          ],
+        },
+        format:
+          "Workshops técnicos, mentorias, programas de capacitação ou acompanhamento de projeto piloto.",
+        cta: {
+          label: "Quero evoluir meu time técnico",
+          message:
+            "Olá! Tenho interesse na frente de IA para Times Técnicos da MarIA Consultoria e gostaria de evoluir meu time.",
+        },
+      },
+      {
+        id: "produtos-internos",
+        glyph: "▣",
+        number: "Frente 03",
+        title: "Produtos Internos Sob Medida",
+        description:
+          "Criação de produtos internos para empresas que têm uma dor operacional relevante e precisam transformar processos manuais, planilhas ou controles descentralizados em uma solução digital estruturada.",
+        audience:
+          "Empresas médias e grandes, áreas operacionais, CSCs, logística, financeiro, controladoria, compras, qualidade, atendimento e times que lidam com processos críticos.",
+        solves: [
+          "Processos críticos controlados em planilhas.",
+          "Falta de histórico confiável e baixa rastreabilidade.",
+          "Cada área ou filial fazendo de um jeito.",
+          "Dificuldade de consolidar dados e ausência de indicadores.",
+          "Dependência de pessoas específicas.",
+          "Falta de uma solução pronta que se encaixe no processo real.",
+        ],
+        extra: {
+          title: "Possíveis entregas",
+          items: [
+            "Sistema web interno e banco de dados.",
+            "Dashboards e indicadores gerenciais.",
+            "Controle de acesso e fluxos de trabalho.",
+            "Importação de arquivos e registros históricos.",
+            "Documentação funcional e técnica.",
+            "Treinamento e acompanhamento de implantação.",
+          ],
+        },
+        format: "Discovery do produto, MVP funcional, implantação e evolução por fases.",
+        cta: {
+          label: "Quero transformar uma dor em produto",
+          message:
+            "Olá! Tenho uma dor operacional relevante e gostaria de conversar sobre a criação de um Produto Interno Sob Medida com a MarIA Consultoria.",
+        },
+      },
+      {
+        id: "automacoes-simples",
+        glyph: "↻",
+        number: "Frente 04",
+        title: "Automações e Sistemas Simples",
+        description:
+          "Soluções digitais menores para pequenos negócios, comércios e áreas que precisam organizar melhor a rotina sem começar por um projeto grande.",
+        audience:
+          "Pequenas empresas, comércios, prestadores de serviço, profissionais autônomos, áreas pequenas ou equipes que dependem muito de controles manuais.",
+        solves: [
+          "Excesso de planilhas e controles manuais.",
+          "Retrabalho em tarefas repetitivas.",
+          "Falta de visão sobre pedidos, clientes, estoque ou tarefas.",
+          "Dificuldade para acompanhar informações básicas do negócio.",
+        ],
+        extra: {
+          title: "Exemplos",
+          items: [
+            "Controle simples de estoque e de pedidos.",
+            "Cadastro de clientes.",
+            "Painel de vendas e dashboard operacional.",
+            "Automação com planilhas e formulários.",
+            "Organização de rotinas administrativas.",
+          ],
+        },
+        format:
+          "Projeto fechado, automação simples, dashboard, planilha inteligente ou sistema leve.",
+        cta: {
+          label: "Quero organizar minha rotina",
+          message:
+            "Olá! Meu negócio precisa sair das planilhas e gostaria de conversar sobre Automações e Sistemas Simples da MarIA Consultoria.",
+        },
+      },
+      {
+        id: "acompanhamento",
+        glyph: "◈",
+        number: "Frente 05",
+        title: "Acompanhamento e Evolução",
+        description:
+          "Apoio contínuo para empresas que já iniciaram sua jornada com IA, automação ou produto interno e precisam evoluir com organização.",
+        audience:
+          "Clientes que já passaram por capacitação, implantação de sistema, automação ou discovery.",
+        solves: [
+          "Ideias paradas após o primeiro projeto.",
+          "Falta de priorização.",
+          "Dificuldade de evoluir a solução.",
+          "Dúvidas no uso contínuo da IA.",
+          "Necessidade de ajustes depois do uso real.",
+        ],
+        extra: {
+          title: "Possíveis entregas",
+          items: [
+            "Reuniões periódicas e priorização de melhorias.",
+            "Evolução de automações.",
+            "Revisão do uso da IA.",
+            "Ajustes de documentação.",
+            "Apoio em novas demandas.",
+            "Roadmap de evolução.",
+          ],
+        },
+        format: "Acompanhamento mensal, mentoria recorrente ou pacote de horas consultivas.",
+        cta: {
+          label: "Quero acompanhamento mensal",
+          message:
+            "Olá! Já iniciei minha jornada e gostaria de conversar sobre o Acompanhamento e Evolução da MarIA Consultoria.",
+        },
+      },
+    ],
+  },
+  match: {
+    eyebrow: "Por onde começar",
+    title: "Qual serviço faz sentido para você?",
+    intro:
+      "Um caminho rápido para se localizar. Encontre a situação mais parecida com a sua e veja qual frente costuma fazer mais sentido.",
+    options: [
+      {
+        condition: "Se sua equipe ainda está começando com IA",
+        service: "Capacitação em IA para Empresas",
+        href: "#capacitacao-empresas",
+      },
+      {
+        condition: "Se seu time técnico quer usar IA melhor",
+        service: "IA para Times Técnicos",
+        href: "#times-tecnicos",
+      },
+      {
+        condition: "Se sua empresa tem uma dor operacional complexa",
+        service: "Produtos Internos Sob Medida",
+        href: "#produtos-internos",
+      },
+      {
+        condition: "Se seu negócio precisa sair das planilhas",
+        service: "Automações e Sistemas Simples",
+        href: "#automacoes-simples",
+      },
+      {
+        condition: "Se você já começou e precisa evoluir",
+        service: "Acompanhamento e Evolução",
+        href: "#acompanhamento",
+      },
+    ],
+  },
+  finalCta: {
+    title: "Vamos entender qual caminho faz mais sentido para sua empresa?",
+    subtext:
+      "Você não precisa saber exatamente qual solução contratar. A primeira conversa serve para entender o momento da empresa, a dor principal e qual formato pode gerar mais valor agora.",
+    ctaPrimary: {
+      label: "Agendar conversa",
+      message:
+        "Olá! Vim pela página de Serviços da MarIA Consultoria e gostaria de agendar uma conversa.",
+    },
+    ctaSecondary: { label: "Ver frentes de atuação", href: "#frentes" },
+  },
 };
 
 export const footer = {

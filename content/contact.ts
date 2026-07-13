@@ -7,19 +7,28 @@ type ContactChannel = "whatsapp" | "email" | "link";
 
 const CONTACT_CHANNEL: ContactChannel = "whatsapp";
 
-const WHATSAPP_NUMBER = "5511999999999"; // DDI + DDD + número, só dígitos
+const WHATSAPP_NUMBER = "5516981437411"; // DDI + DDD + número, só dígitos
 const WHATSAPP_MESSAGE =
   "Olá! Vim pelo site da MarIA Consultoria e gostaria de agendar uma conversa.";
 const CONTACT_EMAIL = "contato@mariaconsultoria.com.br";
 const EXTERNAL_SCHEDULING_LINK = "https://calendly.com/maria-consultoria";
 
-export function getScheduleHref(): string {
+/**
+ * Retorna o link do CTA de contato. Aceita uma mensagem opcional para
+ * pré-preencher o WhatsApp/e-mail de acordo com o serviço de origem — os canais
+ * "link" ignoram a mensagem.
+ */
+export function getScheduleHref(message?: string): string {
   switch (CONTACT_CHANNEL) {
     case "whatsapp":
-      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+        message ?? WHATSAPP_MESSAGE,
+      )}`;
     case "link":
       return EXTERNAL_SCHEDULING_LINK;
     case "email":
-      return `mailto:${CONTACT_EMAIL}`;
+      return message
+        ? `mailto:${CONTACT_EMAIL}?body=${encodeURIComponent(message)}`
+        : `mailto:${CONTACT_EMAIL}`;
   }
 }

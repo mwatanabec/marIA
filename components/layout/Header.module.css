@@ -66,6 +66,12 @@
   color: var(--plum);
 }
 
+.navLinks a.active,
+.mobilePanel a.active {
+  color: var(--plum);
+  font-weight: 700;
+}
+
 .headerCta {
   display: flex;
   align-items: center;

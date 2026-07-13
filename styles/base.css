@@ -20,7 +20,9 @@ body {
     radial-gradient(circle at 86% 0%, rgba(243, 215, 207, 0.5), transparent 28%),
     linear-gradient(180deg, var(--cream) 0%, #fff 45%, var(--cream) 100%);
   line-height: 1.55;
-  overflow-x: hidden;
+  /* clip (não hidden) evita scrollbar horizontal sem criar um scroll
+     container — necessário para o position: sticky do header funcionar */
+  overflow-x: clip;
 }
 
 h1,
@@ -70,7 +72,9 @@ svg {
 
 .page {
   position: relative;
-  overflow: hidden;
+  /* clip preserva o recorte da órbita decorativa mas, ao contrário de hidden,
+     não vira scroll container — mantém o header sticky preso ao topo */
+  overflow-x: clip;
 }
 
 .bg-orbit {
@@ -81,6 +85,23 @@ svg {
   opacity: 0.75;
   pointer-events: none;
   z-index: 0;
+}
+
+/* Assinatura da página de Serviços: ambiente mais lavanda/frio que a Home
+   (que puxa blush/creme). O hero é uma capa escura, então a órbita clara do
+   fundo fica escondida atrás dele — desligamos para não vazar um arco solto. */
+.page--servicos {
+  background: radial-gradient(
+      circle at 90% 40%,
+      rgba(183, 154, 200, 0.24),
+      transparent 32%
+    ),
+    radial-gradient(circle at 4% 66%, rgba(183, 154, 200, 0.16), transparent 34%),
+    linear-gradient(180deg, var(--lavender-soft) 0%, var(--cream) 48%, #fff 100%);
+}
+
+.page--servicos .bg-orbit {
+  display: none;
 }
 
 .bg-orbit svg {

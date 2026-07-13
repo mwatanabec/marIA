@@ -103,6 +103,24 @@
     background var(--duration-fast) var(--ease-soft);
 }
 
+/* 9.9 Entrada suave ao navegar entre páginas — o <main> remonta a cada
+   navegação client-side, então a animação toca em toda troca de rota. O header
+   permanece fixo, dando sensação de continuidade em vez de corte seco. */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#main-content {
+  animation: page-enter 460ms var(--ease-soft) both;
+}
+
 /* 10. Acessibilidade das animações — obrigatório */
 @media (prefers-reduced-motion: reduce) {
   * {
