@@ -3,7 +3,6 @@ import { Footer } from "@/components/layout/Footer";
 import { AnimatedNetwork } from "@/components/motion/AnimatedNetwork";
 import { Hero } from "@/components/sections/Hero";
 import { PainSection } from "@/components/sections/PainSection";
-import { MethodSection } from "@/components/sections/MethodSection";
 import { DifferentialsSection } from "@/components/sections/DifferentialsSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
@@ -18,7 +17,6 @@ export default function Home() {
       <main id="main-content">
         <Hero />
         <PainSection />
-        <MethodSection />
         <DifferentialsSection />
         <AboutSection />
         <ServicesSection />

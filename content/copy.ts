@@ -10,7 +10,7 @@ export const hero = {
   subtext:
     "Unimos processos, tecnologia e IA para organizar operações, automatizar rotinas e criar soluções digitais — com clareza, método e responsabilidade.",
   ctaPrimary: { label: "Conheça os serviços", href: "#servicos" },
-  ctaSecondary: { label: "Ver método MARIA", href: "#metodo" },
+  ctaSecondary: { label: "Ver método MARIA", href: "/servicos#metodo" },
   proofCards: [
     {
       title: "Processo",
@@ -148,46 +148,6 @@ export const about = {
   roleNote: "Fundadora da MarIA Consultoria",
 };
 
-export const services = {
-  eyebrow: "Serviços",
-  title: "Cinco pacotes para levar sua operação do diagnóstico à solução em produção.",
-  intro:
-    "Cada pacote pode ser contratado de forma independente ou combinado em uma jornada completa — do primeiro diagnóstico até a capacitação do seu time.",
-  cards: [
-    {
-      number: "Pacote 01",
-      title: "Diagnóstico MarIA",
-      text: "Identificação de gargalos, retrabalho e oportunidades de automação, com priorização clara do que atacar primeiro.",
-      items: ["Mapa do processo atual", "Matriz impacto × esforço", "Plano de ação"],
-    },
-    {
-      number: "Pacote 02",
-      title: "Estruturação de Processos",
-      text: "Formalização do que hoje está disperso em pessoas, planilhas, mensagens e decisões informais.",
-      items: ["Regras de negócio", "Fluxos e responsabilidades", "Requisitos funcionais"],
-    },
-    {
-      number: "Pacote 03",
-      title: "Projeto Sob Medida",
-      text: "Prototipação e construção incremental de dashboards, portais, automações e sistemas internos sob medida para a operação.",
-      items: ["Dashboards e portais", "Automações e integrações", "Implantação e treinamento"],
-    },
-    {
-      number: "Pacote 04",
-      title: "IA Aplicada",
-      text: "Definição de casos de uso, boas práticas, governança inicial e capacitação para uso prático da IA.",
-      items: ["Mapa de casos de uso", "Guia de boas práticas", "Treinamento executivo ou operacional"],
-    },
-    {
-      number: "Pacote 05",
-      title: "Capacitação",
-      text: "Oficinas para líderes e times que querem aplicar IA, automação e documentação em situações reais.",
-      items: ["Workshop prático", "Mentoria de projetos", "Playbooks de uso"],
-    },
-  ],
-  note: "Acompanhamento e evolução contínua da solução podem ser incluídos em qualquer pacote, sob demanda.",
-};
-
 /**
  * Resumo das frentes na Home. Objetivo: posicionamento e conversão — não repete
  * o conteúdo completo de /servicos (ver `servicesPage`). São 4 cards principais;
@@ -309,23 +269,23 @@ export const projectsPage = {
         title: "Conciliador de Estoque",
         category: "Produto interno · Logística",
         subtitle:
-          "Produto interno para padronização, rastreabilidade e gestão da conciliação entre a visão do cliente e a visão do WMS.",
-        tags: ["Produto interno", "Operações", "Logística", "Dados", "Automação", "Dashboard", "WMS"],
+          "Produto interno para padronização, rastreabilidade e gestão da conciliação entre a visão do cliente e a visão do sistema de armazém.",
+        tags: ["Produto interno", "Operações", "Logística", "Dados", "Automação", "Dashboard", "Estoque"],
         reviewNote: "",
         context:
-          "Operação logística multifilial com a necessidade de conciliar o estoque entre a visão do cliente e a visão registrada no WMS. A oportunidade era trazer mais padronização, rastreabilidade, visão gerencial e acompanhamento estruturado de um processo recorrente entre várias unidades.",
+          "Operação logística multifilial com a necessidade de conciliar o estoque entre a visão do cliente e a visão registrada no sistema de armazém. A oportunidade era trazer mais padronização, rastreabilidade, visão gerencial e acompanhamento estruturado de um processo recorrente entre várias unidades.",
         problem:
-          "A conciliação de estoque é um processo crítico para a operação. Com múltiplas unidades, clientes e formatos de arquivo, era preciso centralizar informações, acompanhar aderência, medir acuracidade, controlar metas e SLA e registrar divergências de forma padronizada — reduzindo a dependência de controles manuais dispersos.",
+          "A conciliação de estoque é um processo crítico para a operação. Com múltiplas unidades, clientes e formatos de arquivo, era preciso centralizar informações, acompanhar aderência, medir acuracidade, controlar metas e prazos de atendimento e registrar divergências de forma padronizada — reduzindo a dependência de controles manuais dispersos.",
         solution:
-          "Foi desenvolvido um produto interno, hoje em produção: uma plataforma web corporativa que importa e normaliza os arquivos, aplica a lógica de conciliação entre cliente e WMS, mantém o histórico das execuções e consolida tudo em dashboards executivos com indicadores de aderência, acuracidade, metas e SLA.",
+          "Foi desenvolvido um produto interno, hoje em produção: uma plataforma web corporativa que importa e normaliza os arquivos, aplica a lógica de conciliação entre cliente e sistema de armazém, mantém o histórico das execuções e consolida tudo em painéis executivos com indicadores de aderência, acuracidade, metas e prazos.",
         deliverables: [
-          "Plataforma web corporativa em produção (backend, frontend e banco de dados).",
+          "Plataforma web corporativa completa (do que o usuário vê à base de dados por trás), em produção.",
           "Controle de acesso por perfil.",
           "Importação e normalização de arquivos de diferentes formatos.",
-          "Lógica de conciliação entre a visão do cliente e o WMS.",
+          "Lógica de conciliação entre a visão do cliente e o sistema de armazém.",
           "Histórico de execuções e gestão de divergências e ocorrências.",
-          "Dashboards executivos com aderência, acuracidade, metas e SLA.",
-          "Deploy em servidor, com evolução acompanhada pelo uso real das filiais.",
+          "Painéis executivos com aderência, acuracidade, metas e prazos.",
+          "Implantação em produção, com evolução acompanhada pelo uso real das filiais.",
         ],
         impact: [
           "Mais rastreabilidade em um processo crítico da operação.",
@@ -506,7 +466,7 @@ export const servicesPage = {
         pitch:
           "Transformamos processos críticos em soluções digitais internas, com informação centralizada, rastreabilidade e visão gerencial.",
         audience:
-          "Empresas médias e grandes, áreas operacionais, CSCs, logística, financeiro e controladoria.",
+          "Empresas médias e grandes, áreas operacionais, centros de serviços compartilhados, logística, financeiro e controladoria.",
         signals: [
           "Processos que hoje dependem de planilhas, arquivos soltos ou controles paralelos.",
           "Empresas que precisam padronizar a operação e acompanhar indicadores.",
@@ -696,18 +656,18 @@ export const platformGraph = {
       primary: true,
       x: 750,
       y: 245,
-      description: services.intro,
+      description: servicesPage.offerings.intro,
     },
     { id: "mapear", label: "Mapear", type: "method", primary: false, x: 120, y: 150, description: method.steps[0].text },
     { id: "analisar", label: "Analisar", type: "method", primary: false, x: 95, y: 265, description: method.steps[1].text },
     { id: "registrar", label: "Registrar", type: "method", primary: false, x: 130, y: 375, description: method.steps[2].text },
     { id: "implementar", label: "Implementar", type: "method", primary: false, x: 215, y: 450, description: method.steps[3].text },
     { id: "acompanhar", label: "Acompanhar", type: "method", primary: false, x: 330, y: 440, description: method.steps[4].text },
-    { id: "diagnostico", label: "Diagnóstico", detailTitle: services.cards[0].title, type: "service", primary: false, x: 880, y: 150, description: services.cards[0].text },
-    { id: "estruturacao", label: "Estruturação", detailTitle: services.cards[1].title, type: "service", primary: false, x: 905, y: 265, description: services.cards[1].text },
-    { id: "construcao", label: "Sob medida", detailTitle: services.cards[2].title, type: "service", primary: false, x: 870, y: 375, description: services.cards[2].text },
-    { id: "iaAplicada", label: "IA aplicada", detailTitle: services.cards[3].title, type: "service", primary: false, x: 785, y: 450, description: services.cards[3].text },
-    { id: "capacitacao", label: "Capacitação", detailTitle: services.cards[4].title, type: "service", primary: false, x: 670, y: 445, description: services.cards[4].text },
+    { id: "capacitacaoEmpresas", label: "Capacitação", detailTitle: servicesPage.offerings.cards[0].title, type: "service", primary: false, x: 880, y: 150, description: servicesPage.offerings.cards[0].pitch },
+    { id: "timesTecnicos", label: "Times técnicos", detailTitle: servicesPage.offerings.cards[1].title, type: "service", primary: false, x: 905, y: 265, description: servicesPage.offerings.cards[1].pitch },
+    { id: "produtosInternos", label: "Produto interno", detailTitle: servicesPage.offerings.cards[2].title, type: "service", primary: false, x: 870, y: 375, description: servicesPage.offerings.cards[2].pitch },
+    { id: "automacoes", label: "Automações", detailTitle: servicesPage.offerings.cards[3].title, type: "service", primary: false, x: 785, y: 450, description: servicesPage.offerings.cards[3].pitch },
+    { id: "acompanhamento", label: "Evolução", detailTitle: servicesPage.offerings.cards[4].title, type: "service", primary: false, x: 670, y: 445, description: servicesPage.offerings.cards[4].pitch },
     {
       id: "caseA",
       label: "Plataforma interna",
@@ -749,19 +709,19 @@ export const platformGraph = {
     ["metodo", "registrar"],
     ["metodo", "implementar"],
     ["metodo", "acompanhar"],
-    ["servicos", "diagnostico"],
-    ["servicos", "estruturacao"],
-    ["servicos", "construcao"],
-    ["servicos", "iaAplicada"],
-    ["servicos", "capacitacao"],
+    ["servicos", "capacitacaoEmpresas"],
+    ["servicos", "timesTecnicos"],
+    ["servicos", "produtosInternos"],
+    ["servicos", "automacoes"],
+    ["servicos", "acompanhamento"],
     ["diferenciais", "caseA"],
     ["diferenciais", "caseB"],
     ["diferenciais", "caseC"],
-    ["caseA", "construcao"],
+    ["caseA", "produtosInternos"],
     ["caseA", "maria"],
-    ["caseB", "estruturacao"],
-    ["caseB", "diagnostico"],
-    ["caseC", "iaAplicada"],
+    ["caseB", "produtosInternos"],
+    ["caseB", "automacoes"],
+    ["caseC", "timesTecnicos"],
     ["caseC", "metodo"],
   ] as [string, string][],
   typeLabels: {

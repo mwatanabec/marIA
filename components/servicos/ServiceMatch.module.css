@@ -39,6 +39,24 @@
   color: var(--muted);
   font-size: 0.98rem;
   line-height: 1.45;
+  font-style: italic;
+}
+
+.answer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.answerLabel {
+  color: var(--lavender);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  font-size: 0.68rem;
+  text-transform: uppercase;
 }
 
 .service {
@@ -46,9 +64,6 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 12px;
-  margin-top: auto;
-  padding-top: 14px;
-  border-top: 1px solid var(--line);
   color: var(--plum-deep);
   font-family: var(--font-serif);
   font-size: 1.06rem;

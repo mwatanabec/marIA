@@ -52,7 +52,7 @@ export function ServiceOfferings() {
 
                     <div className={styles.signals}>
                       <span className={styles.miniLabel}>{offerings.signalsLabel}</span>
-                      <ul className="dot-list">
+                      <ul className={styles.signalList}>
                         {card.signals.map((item) => (
                           <li key={item}>{item}</li>
                         ))}
@@ -73,7 +73,7 @@ export function ServiceOfferings() {
                   {card.deliveries && card.deliveriesLabel ? (
                     <aside className={styles.deliveries}>
                       <span className={styles.miniLabel}>{card.deliveriesLabel}</span>
-                      <ul className="dot-list">
+                      <ul className={styles.deliveryGrid}>
                         {card.deliveries.map((item) => (
                           <li key={item}>{item}</li>
                         ))}
