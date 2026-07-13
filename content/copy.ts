@@ -8,7 +8,7 @@ export const hero = {
   eyebrow: "IA aplicada, automação e soluções digitais",
   headline: "Transforme processos manuais em soluções digitais que funcionam de verdade.",
   subtext:
-    "A MarIA Consultoria une estratégia, processos, tecnologia e Inteligência Artificial para ajudar empresas a organizar operações, automatizar rotinas e construir soluções escaláveis com clareza, método e responsabilidade.",
+    "Unimos processos, tecnologia e IA para organizar operações, automatizar rotinas e criar soluções digitais — com clareza, método e responsabilidade.",
   ctaPrimary: { label: "Conheça os serviços", href: "#servicos" },
   ctaSecondary: { label: "Ver método MARIA", href: "#metodo" },
   proofCards: [
@@ -51,32 +51,32 @@ export const pain = {
     {
       icon: "⌘",
       title: "Processos descentralizados",
-      text: "Controles em e-mails, planilhas e mensagens, sem padrão entre áreas, filiais ou equipes.",
+      text: "Controles espalhados por e-mails, planilhas e mensagens, sem padrão entre áreas.",
     },
     {
       icon: "≋",
       title: "Regras pouco claras",
-      text: "Conhecimento informal, exceções não documentadas e decisões que dependem de poucas pessoas.",
+      text: "Conhecimento informal e decisões que dependem de poucas pessoas.",
     },
     {
       icon: "◇",
       title: "Dados desconectados",
-      text: "Sistemas, arquivos e fontes que não conversam, dificultando indicadores e visão gerencial.",
+      text: "Sistemas e arquivos que não conversam, sem indicadores nem visão gerencial.",
     },
     {
       icon: "↻",
       title: "Retrabalho operacional",
-      text: "Tarefas repetitivas que consomem tempo e poderiam virar automações, fluxos ou sistemas simples.",
+      text: "Tarefas repetitivas que consomem tempo e poderiam virar automação.",
     },
     {
       icon: "◉",
       title: "IA sem direção",
-      text: "Desejo de usar IA, mas sem clareza sobre casos de uso, riscos, ferramentas e retorno prático.",
+      text: "Vontade de usar IA, mas sem clareza de casos de uso, riscos e retorno.",
     },
     {
       icon: "▣",
       title: "Projetos sem continuidade",
-      text: "Soluções que nascem sem documentação, governança, validação e plano de evolução.",
+      text: "Soluções que nascem sem documentação, validação e plano de evolução.",
     },
   ],
 };
@@ -122,11 +122,11 @@ export const differentials = {
   eyebrow: "Diferenciais",
   title: "Clareza para decidir, estrutura para executar e documentação para continuar.",
   list: [
-    "Transforma conhecimento informal em patrimônio organizacional.",
-    "Conecta operação, dados, tecnologia e tomada de decisão.",
-    "Documenta regras de negócio, decisões, riscos e próximos passos.",
-    "Constrói soluções proporcionais, rastreáveis e preparadas para crescer.",
-    "Usa IA como aceleradora, sem substituir validação humana e critério técnico.",
+    "Transforma conhecimento informal em patrimônio da empresa.",
+    "Conecta operação, dados, tecnologia e decisão.",
+    "Documenta regras, decisões e riscos ao longo da entrega.",
+    "Constrói soluções proporcionais, rastreáveis e prontas para crescer.",
+    "Usa IA como aceleradora, sem abrir mão da validação humana.",
   ],
 };
 
@@ -134,8 +134,8 @@ export const about = {
   eyebrow: "Quem conduz a MarIA",
   title: "Uma pessoa que conecta negócio e tecnologia — não uma caixa-preta de IA.",
   paragraphs: [
-    "A MarIA é conduzida por Maria Eduarda, profissional que une visão de negócio e tecnologia: entende a operação de perto, estrutura regras que hoje só existem na cabeça das pessoas, documenta processos e transforma dores operacionais em soluções digitais.",
-    "Antes de qualquer automação ou modelo de IA, existe entendimento real do problema, das pessoas envolvidas e do risco de cada decisão — para que a tecnologia sirva ao negócio, e não o contrário.",
+    "A MarIA é conduzida por Maria Eduarda, que une visão de negócio e tecnologia: entende a operação de perto, estrutura regras que só existem na cabeça das pessoas e transforma dores operacionais em soluções digitais.",
+    "Antes de qualquer automação, vem o entendimento real do problema, das pessoas e do risco de cada decisão — para a tecnologia servir ao negócio, e não o contrário.",
   ],
   highlights: [
     "Conecta negócio e tecnologia em uma mesma visão.",
@@ -201,30 +201,30 @@ export const homeServices = {
   subtitle:
     "IA prática para equipes, soluções digitais para processos reais e produtos internos sob medida.",
   support:
-    "A MarIA Consultoria atua em diferentes níveis: capacitando pessoas para usar IA no trabalho, apoiando times técnicos a aplicar IA com método, criando automações simples e construindo produtos internos para dores operacionais mais complexas.",
+    "Atua em diferentes níveis: capacita pessoas, apoia times técnicos, cria automações simples e constrói produtos internos para dores mais complexas.",
   cards: [
     {
       icon: "✦",
       title: "Capacitação em IA",
-      text: "Workshops, palestras e treinamentos para equipes que querem usar IA no dia a dia com mais clareza, produtividade e responsabilidade.",
+      text: "Workshops e treinamentos para a equipe usar IA no dia a dia com clareza e produtividade.",
     },
     {
       icon: "⌘",
       title: "IA para Times Técnicos",
-      text: "Mentorias e capacitações para TI, controladoria, dados e áreas analíticas aplicarem IA em automações, documentação, planilhas, desenvolvimento e projetos internos.",
+      text: "Mentorias para TI, dados e áreas analíticas aplicarem IA com método em projetos reais.",
     },
     {
       icon: "▣",
       title: "Produtos Internos Sob Medida",
-      text: "Criação de soluções digitais internas para empresas que precisam transformar processos críticos, planilhas e controles descentralizados em produtos rastreáveis e evolutivos.",
+      text: "Processos críticos e planilhas viram soluções internas rastreáveis, com visão gerencial.",
     },
     {
       icon: "↻",
       title: "Automações e Sistemas Simples",
-      text: "Soluções leves para pequenos negócios ou áreas que precisam organizar pedidos, clientes, estoque, tarefas, indicadores ou rotinas administrativas.",
+      text: "Soluções leves para organizar pedidos, clientes, estoque e rotinas do dia a dia.",
     },
   ],
-  note: "Depois da implantação ou capacitação, a MarIA também pode acompanhar a evolução das iniciativas com mentorias, priorização de melhorias e apoio contínuo.",
+  note: "Depois da entrega, a MarIA acompanha a evolução com mentorias, priorização e apoio contínuo.",
   cta: { label: "Conhecer todos os serviços", href: "/servicos" },
 };
 
@@ -413,6 +413,15 @@ export const servicesPage = {
         "Olá! Vim pela página de Serviços da MarIA Consultoria e gostaria de conversar sobre uma necessidade da minha empresa.",
     },
     ctaSecondary: { label: "Ver frentes de atuação", href: "#frentes" },
+    // Nós do visual abstrato do hero (constelação decorativa). Espelham as
+    // frentes principais e orbitam o núcleo "IA aplicada".
+    brandCore: "IA aplicada",
+    brandNodes: [
+      { label: "Capacitação", glyph: "✦", href: "#capacitacao-empresas" },
+      { label: "Automação", glyph: "↻", href: "#automacoes-simples" },
+      { label: "Produto Interno", glyph: "▣", href: "#produtos-internos" },
+      { label: "Evolução", glyph: "◈", href: "#acompanhamento" },
+    ],
   },
   intro: {
     eyebrow: "Como a MarIA pode ajudar",
@@ -445,38 +454,22 @@ export const servicesPage = {
     intro:
       "Cada frente pode ser contratada de forma independente ou combinada em uma jornada — da primeira capacitação até o produto interno em produção.",
     audienceLabel: "Para quem é",
-    solvesLabel: "Problemas que resolve",
-    formatLabel: "Formato",
+    signalsLabel: "Quando faz sentido",
     cards: [
       {
         id: "capacitacao-empresas",
         glyph: "✦",
         number: "Frente 01",
         title: "Capacitação em IA para Empresas",
-        description:
-          "Treinamentos, palestras e workshops para equipes que querem aprender a usar IA no trabalho real, com exemplos práticos, linguagem acessível e foco em produtividade.",
+        pitch:
+          "Sua equipe usando IA no dia a dia com clareza, segurança e resultado real.",
         audience:
-          "Usuários administrativos, lideranças, áreas operacionais, financeiro, RH, comercial, atendimento e equipes que ainda estão começando a usar IA.",
-        solves: [
+          "Lideranças e equipes administrativas e operacionais começando com IA.",
+        signals: [
           "Pessoas usando IA de forma rasa ou insegura.",
-          "Dificuldade para transformar IA em produtividade real.",
-          "Falta de repertório prático.",
-          "Medo de usar IA por não saber limites e cuidados.",
-          "Baixa padronização no uso das ferramentas.",
+          "Dificuldade de transformar IA em produtividade real.",
+          "Falta de repertório prático e de padrão no uso.",
         ],
-        extra: {
-          title: "Exemplos de temas",
-          items: [
-            "Como usar IA para escrever e revisar e-mails.",
-            "Como resumir reuniões e documentos.",
-            "Como estruturar ideias e apresentações.",
-            "Como criar prompts melhores.",
-            "Como usar IA com responsabilidade.",
-            "Como ganhar produtividade no dia a dia.",
-          ],
-        },
-        format:
-          "Palestras, workshops práticos, treinamentos por turma ou programas de capacitação.",
         cta: {
           label: "Quero capacitar minha equipe",
           message:
@@ -488,30 +481,15 @@ export const servicesPage = {
         glyph: "⌘",
         number: "Frente 02",
         title: "IA para Times Técnicos e Áreas Analíticas",
-        description:
-          "Capacitação e mentoria para times que querem usar IA de forma mais avançada em automações, documentação, planilhas, análise de dados, desenvolvimento e construção de soluções internas.",
+        pitch:
+          "Times técnicos aplicando IA com método em automações, dados e soluções internas.",
         audience:
-          "Times de TI, controladoria, dados, automação, sistemas, processos, PMO e áreas analíticas.",
-        solves: [
-          "Times técnicos usando IA apenas para respostas simples.",
-          "Dificuldade em aplicar IA no desenvolvimento de soluções.",
-          "Falta de método para trabalhar com IA em projetos reais.",
+          "TI, controladoria, dados, automação e áreas analíticas.",
+        signals: [
+          "IA usada apenas para respostas simples.",
+          "Falta de método para projetos reais com IA.",
           "Retrabalho por ausência de documentação e validação.",
-          "Uso de IA sem critério técnico, revisão ou governança.",
         ],
-        extra: {
-          title: "Exemplos de aplicação",
-          items: [
-            "Apoio com VS Code, Claude Code, ChatGPT e outras ferramentas.",
-            "Estruturação de requisitos com IA.",
-            "Documentação de regras de negócio.",
-            "Revisão de planilhas e automações.",
-            "Apoio na criação de sistemas internos.",
-            "Trabalho em lotes, testes, validação e registro de decisões.",
-          ],
-        },
-        format:
-          "Workshops técnicos, mentorias, programas de capacitação ou acompanhamento de projeto piloto.",
         cta: {
           label: "Quero evoluir meu time técnico",
           message:
@@ -522,31 +500,28 @@ export const servicesPage = {
         id: "produtos-internos",
         glyph: "▣",
         number: "Frente 03",
+        featured: true,
+        featuredLabel: "Frente mais estratégica",
         title: "Produtos Internos Sob Medida",
-        description:
-          "Criação de produtos internos para empresas que têm uma dor operacional relevante e precisam transformar processos manuais, planilhas ou controles descentralizados em uma solução digital estruturada.",
+        pitch:
+          "Transformamos processos críticos em soluções digitais internas, com informação centralizada, rastreabilidade e visão gerencial.",
         audience:
-          "Empresas médias e grandes, áreas operacionais, CSCs, logística, financeiro, controladoria, compras, qualidade, atendimento e times que lidam com processos críticos.",
-        solves: [
-          "Processos críticos controlados em planilhas.",
-          "Falta de histórico confiável e baixa rastreabilidade.",
-          "Cada área ou filial fazendo de um jeito.",
-          "Dificuldade de consolidar dados e ausência de indicadores.",
-          "Dependência de pessoas específicas.",
-          "Falta de uma solução pronta que se encaixe no processo real.",
+          "Empresas médias e grandes, áreas operacionais, CSCs, logística, financeiro e controladoria.",
+        signals: [
+          "Processos que hoje dependem de planilhas, arquivos soltos ou controles paralelos.",
+          "Empresas que precisam padronizar a operação e acompanhar indicadores.",
+          "Dores específicas que uma ferramenta pronta não resolve bem.",
         ],
-        extra: {
-          title: "Possíveis entregas",
-          items: [
-            "Sistema web interno e banco de dados.",
-            "Dashboards e indicadores gerenciais.",
-            "Controle de acesso e fluxos de trabalho.",
-            "Importação de arquivos e registros históricos.",
-            "Documentação funcional e técnica.",
-            "Treinamento e acompanhamento de implantação.",
-          ],
-        },
-        format: "Discovery do produto, MVP funcional, implantação e evolução por fases.",
+        // Entregas em linguagem de valor (exibidas só nesta frente em destaque).
+        deliveriesLabel: "O que fica funcionando",
+        deliveries: [
+          "Solução interna para centralizar informações e organizar o processo.",
+          "Painéis e indicadores para acompanhamento gerencial.",
+          "Acessos organizados conforme o papel de cada usuário.",
+          "Fluxos de trabalho mais claros e rastreáveis.",
+          "Histórico confiável das informações importantes.",
+          "Documentação para uso, continuidade e evolução da solução.",
+        ],
         cta: {
           label: "Quero transformar uma dor em produto",
           message:
@@ -558,28 +533,15 @@ export const servicesPage = {
         glyph: "↻",
         number: "Frente 04",
         title: "Automações e Sistemas Simples",
-        description:
-          "Soluções digitais menores para pequenos negócios, comércios e áreas que precisam organizar melhor a rotina sem começar por um projeto grande.",
+        pitch:
+          "Soluções leves para organizar a rotina sem começar por um projeto grande.",
         audience:
-          "Pequenas empresas, comércios, prestadores de serviço, profissionais autônomos, áreas pequenas ou equipes que dependem muito de controles manuais.",
-        solves: [
+          "Pequenos negócios, comércios e áreas que dependem de controles manuais.",
+        signals: [
           "Excesso de planilhas e controles manuais.",
           "Retrabalho em tarefas repetitivas.",
-          "Falta de visão sobre pedidos, clientes, estoque ou tarefas.",
-          "Dificuldade para acompanhar informações básicas do negócio.",
+          "Pouca visão sobre pedidos, clientes ou estoque.",
         ],
-        extra: {
-          title: "Exemplos",
-          items: [
-            "Controle simples de estoque e de pedidos.",
-            "Cadastro de clientes.",
-            "Painel de vendas e dashboard operacional.",
-            "Automação com planilhas e formulários.",
-            "Organização de rotinas administrativas.",
-          ],
-        },
-        format:
-          "Projeto fechado, automação simples, dashboard, planilha inteligente ou sistema leve.",
         cta: {
           label: "Quero organizar minha rotina",
           message:
@@ -591,29 +553,15 @@ export const servicesPage = {
         glyph: "◈",
         number: "Frente 05",
         title: "Acompanhamento e Evolução",
-        description:
-          "Apoio contínuo para empresas que já iniciaram sua jornada com IA, automação ou produto interno e precisam evoluir com organização.",
+        pitch:
+          "Apoio contínuo para evoluir com organização o que já começou.",
         audience:
-          "Clientes que já passaram por capacitação, implantação de sistema, automação ou discovery.",
-        solves: [
+          "Quem já passou por capacitação, automação ou implantação.",
+        signals: [
           "Ideias paradas após o primeiro projeto.",
-          "Falta de priorização.",
-          "Dificuldade de evoluir a solução.",
-          "Dúvidas no uso contínuo da IA.",
+          "Falta de priorização para evoluir.",
           "Necessidade de ajustes depois do uso real.",
         ],
-        extra: {
-          title: "Possíveis entregas",
-          items: [
-            "Reuniões periódicas e priorização de melhorias.",
-            "Evolução de automações.",
-            "Revisão do uso da IA.",
-            "Ajustes de documentação.",
-            "Apoio em novas demandas.",
-            "Roadmap de evolução.",
-          ],
-        },
-        format: "Acompanhamento mensal, mentoria recorrente ou pacote de horas consultivas.",
         cta: {
           label: "Quero acompanhamento mensal",
           message:
@@ -629,27 +577,32 @@ export const servicesPage = {
       "Um caminho rápido para se localizar. Encontre a situação mais parecida com a sua e veja qual frente costuma fazer mais sentido.",
     options: [
       {
-        condition: "Se sua equipe ainda está começando com IA",
+        glyph: "✦",
+        condition: "Sua equipe ainda está começando com IA",
         service: "Capacitação em IA para Empresas",
         href: "#capacitacao-empresas",
       },
       {
-        condition: "Se seu time técnico quer usar IA melhor",
+        glyph: "⌘",
+        condition: "Seu time técnico quer usar IA melhor",
         service: "IA para Times Técnicos",
         href: "#times-tecnicos",
       },
       {
-        condition: "Se sua empresa tem uma dor operacional complexa",
+        glyph: "▣",
+        condition: "Sua empresa tem uma dor operacional complexa",
         service: "Produtos Internos Sob Medida",
         href: "#produtos-internos",
       },
       {
-        condition: "Se seu negócio precisa sair das planilhas",
+        glyph: "↻",
+        condition: "Seu negócio precisa sair das planilhas",
         service: "Automações e Sistemas Simples",
         href: "#automacoes-simples",
       },
       {
-        condition: "Se você já começou e precisa evoluir",
+        glyph: "◈",
+        condition: "Você já começou e precisa evoluir",
         service: "Acompanhamento e Evolução",
         href: "#acompanhamento",
       },

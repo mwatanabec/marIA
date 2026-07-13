@@ -47,120 +47,120 @@
   margin-top: 32px;
 }
 
-/* Mapa lateral: nós conectados que espelham as 5 frentes (motivo de rede) */
-.map {
+/* Visual abstrato de marca: nós flutuantes (Capacitação, Automação, Produto
+   Interno, Evolução) conectados por linhas ao núcleo "IA aplicada". */
+.visual {
   position: relative;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--radius-lg);
-  padding: 28px 30px;
+  padding: 30px;
   backdrop-filter: blur(6px);
-  overflow: hidden;
 }
 
-.map::after {
+.visual::after {
   content: "";
   position: absolute;
-  width: 220px;
-  height: 220px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
-  background: rgba(183, 154, 200, 0.2);
-  right: -90px;
-  top: -90px;
+  background: rgba(183, 154, 200, 0.22);
+  right: -100px;
+  top: -100px;
   pointer-events: none;
 }
 
-.mapHead {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--blush);
-  font-weight: 800;
-  font-size: 0.86rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
+.stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  aspect-ratio: 1 / 1;
+  width: 100%;
 }
 
-.mapDot {
+.links {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: visible;
+}
+
+/* Cada nó ocupa uma célula da grade e centraliza seu conteúdo. */
+.node {
+  display: grid;
+  place-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.core {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 16px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(243, 215, 207, 0.9));
+  color: var(--plum-deep);
+  font-weight: 850;
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+  box-shadow: 0 14px 34px rgba(59, 29, 63, 0.35);
+  white-space: nowrap;
+}
+
+.coreDot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--blush);
-  box-shadow: 0 0 0 6px rgba(243, 215, 207, 0.2);
+  background: var(--plum);
+  box-shadow: 0 0 0 5px rgba(91, 58, 94, 0.18);
   flex: 0 0 auto;
 }
 
-.mapList {
-  position: relative;
-  display: grid;
-  gap: 2px;
-}
-
-/* Linha vertical que conecta os nós — centralizada no eixo dos círculos:
-   padding-left do link (8px) + raio do nó (17px) = 25px */
-.mapList::before {
-  content: "";
-  position: absolute;
-  left: 25px;
-  transform: translateX(-50%);
-  top: 26px;
-  bottom: 26px;
-  width: 1.5px;
-  background: linear-gradient(
-    180deg,
-    transparent,
-    rgba(255, 255, 255, 0.4),
-    transparent
-  );
-}
-
-.mapItem a {
-  position: relative;
-  display: flex;
+.nodeCard {
+  display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 14px;
-  padding: 11px 8px;
-  border-radius: var(--radius-sm);
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.9);
-  transition: background var(--duration-fast) var(--ease-soft),
-    color var(--duration-fast) var(--ease-soft);
+  gap: 8px;
+  padding: 14px 12px 12px;
+  min-width: 104px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
 }
 
-.mapItem a:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-}
-
-.mapNode {
-  position: relative;
-  z-index: 1;
-  flex: 0 0 auto;
-  width: 34px;
-  height: 34px;
+.nodeGlyph {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  /* Fundo OPACO (base sólida + leve brilho): mascara a linha, que passa por
-     trás e só aparece nos intervalos entre os nós — efeito "contas no fio". */
-  background: linear-gradient(155deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.04)),
-    var(--plum-deep);
+  background: var(--plum-deep);
   border: 1.5px solid rgba(183, 154, 200, 0.7);
   color: #fff;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
 }
 
-.mapLabel {
-  font-size: 0.96rem;
-  font-weight: 600;
-  line-height: 1.3;
+.nodeLabel {
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 @media (max-width: 980px) {
   .grid {
     grid-template-columns: 1fr;
     gap: 34px;
+  }
+
+  .stage {
+    max-width: 440px;
+    margin-inline: auto;
   }
 }
 
@@ -170,7 +170,27 @@
     border-radius: 0 0 28px 28px;
   }
 
-  .map {
-    padding: 22px 20px;
+  .visual {
+    padding: 20px;
+  }
+
+  .nodeCard {
+    min-width: 88px;
+    padding: 11px 9px 10px;
+  }
+
+  .nodeGlyph {
+    width: 34px;
+    height: 34px;
+    font-size: 0.95rem;
+  }
+
+  .nodeLabel {
+    font-size: 0.76rem;
+  }
+
+  .core {
+    font-size: 0.8rem;
+    padding: 9px 13px;
   }
 }

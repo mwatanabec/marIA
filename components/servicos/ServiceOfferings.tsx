@@ -1,7 +1,6 @@
 import { servicesPage } from "@/content/copy";
 import { getScheduleHref } from "@/content/contact";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { Button } from "@/components/ui/Button";
 import { SectionReveal } from "@/components/motion/SectionReveal";
 import styles from "./ServiceOfferings.module.css";
 
@@ -19,61 +18,72 @@ export function ServiceOfferings() {
           <p>{offerings.intro}</p>
         </SectionReveal>
 
-        <div className={styles.list}>
-          {offerings.cards.map((card) => (
-            <SectionReveal key={card.id}>
-              <article
-                id={card.id}
-                className={`${styles.offering} card-hover`}
-                aria-labelledby={`${card.id}-title`}
+        <div className={styles.grid}>
+          {offerings.cards.map((card) => {
+            const featured = Boolean(card.featured);
+            return (
+              <SectionReveal
+                key={card.id}
+                className={featured ? styles.featuredCell : undefined}
               >
-                <div className={styles.main}>
-                  <div className={styles.head}>
-                    <span className={styles.glyph} aria-hidden="true">
-                      {card.glyph}
-                    </span>
-                    <span className={styles.number}>{card.number}</span>
-                  </div>
-                  <h3 id={`${card.id}-title`}>{card.title}</h3>
-                  <p className={styles.desc}>{card.description}</p>
+                <article
+                  id={card.id}
+                  className={`${styles.card} ${featured ? styles.featured : ""} card-hover`}
+                  aria-labelledby={`${card.id}-title`}
+                >
+                  <div className={styles.body}>
+                    <div className={styles.head}>
+                      <span className={styles.glyph} aria-hidden="true">
+                        {card.glyph}
+                      </span>
+                      <span className={styles.number}>{card.number}</span>
+                      {card.featuredLabel ? (
+                        <span className={styles.badge}>{card.featuredLabel}</span>
+                      ) : null}
+                    </div>
 
-                  <div className={styles.meta}>
-                    <span className={styles.miniLabel}>{offerings.audienceLabel}</span>
-                    <p>{card.audience}</p>
-                  </div>
-                  <div className={styles.meta}>
-                    <span className={styles.miniLabel}>{offerings.formatLabel}</span>
-                    <p>{card.format}</p>
-                  </div>
+                    <h3 id={`${card.id}-title`}>{card.title}</h3>
+                    <p className={styles.pitch}>{card.pitch}</p>
 
-                  <div className={styles.cta}>
-                    <Button href={getScheduleHref(card.cta.message)} variant="primary">
+                    <p className={styles.audience}>
+                      <span className={styles.audienceTag}>{offerings.audienceLabel}</span>
+                      {card.audience}
+                    </p>
+
+                    <div className={styles.signals}>
+                      <span className={styles.miniLabel}>{offerings.signalsLabel}</span>
+                      <ul className="dot-list">
+                        {card.signals.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <a
+                      className={styles.cta}
+                      href={getScheduleHref(card.cta.message)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       {card.cta.label}
-                    </Button>
+                      <span aria-hidden="true">→</span>
+                    </a>
                   </div>
-                </div>
 
-                <div className={styles.lists}>
-                  <div className={styles.listBlock}>
-                    <span className={styles.miniLabel}>{offerings.solvesLabel}</span>
-                    <ul className="dot-list">
-                      {card.solves.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className={styles.listBlock}>
-                    <span className={styles.miniLabel}>{card.extra.title}</span>
-                    <ul className="dot-list">
-                      {card.extra.items.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </article>
-            </SectionReveal>
-          ))}
+                  {card.deliveries && card.deliveriesLabel ? (
+                    <aside className={styles.deliveries}>
+                      <span className={styles.miniLabel}>{card.deliveriesLabel}</span>
+                      <ul className="dot-list">
+                        {card.deliveries.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    </aside>
+                  ) : null}
+                </article>
+              </SectionReveal>
+            );
+          })}
         </div>
       </div>
     </section>

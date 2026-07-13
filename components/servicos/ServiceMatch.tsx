@@ -20,11 +20,16 @@ export function ServiceMatch() {
         <SectionReveal className={styles.grid}>
           {match.options.map((option) => (
             <a key={option.href} className={`${styles.card} card-hover`} href={option.href}>
-              <span className={styles.condition}>{option.condition}</span>
-              <span className={styles.arrow} aria-hidden="true">
-                →
+              <span className={styles.glyph} aria-hidden="true">
+                {option.glyph}
               </span>
-              <strong className={styles.service}>{option.service}</strong>
+              <span className={styles.condition}>{option.condition}</span>
+              <span className={styles.service}>
+                <span>{option.service}</span>
+                <span className={styles.arrow} aria-hidden="true">
+                  →
+                </span>
+              </span>
             </a>
           ))}
         </SectionReveal>

@@ -1,49 +1,72 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* ~200px permite as 5 opções em uma linha só no desktop (evita card órfão),
+     caindo para 2–3 colunas no tablet e 1 no mobile. */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 18px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  background: rgba(255, 255, 255, 0.68);
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.7);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  padding: 24px;
+  padding: 26px 24px;
   box-shadow: var(--shadow-soft);
   text-decoration: none;
   color: var(--charcoal);
   position: relative;
   overflow: hidden;
-  min-height: 168px;
+  min-height: 190px;
+}
+
+.glyph {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(183, 154, 200, 0.22), rgba(243, 215, 207, 0.3));
+  color: var(--plum);
+  font-size: 1.15rem;
+  font-weight: 900;
+  flex: 0 0 auto;
 }
 
 .condition {
   color: var(--muted);
   font-size: 0.98rem;
-  line-height: 1.4;
+  line-height: 1.45;
+}
+
+.service {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--plum-deep);
+  font-family: var(--font-serif);
+  font-size: 1.06rem;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
 }
 
 .arrow {
   color: var(--lavender);
   font-size: 1.3rem;
   line-height: 1;
-  transition: transform var(--duration-fast) var(--ease-soft);
+  flex: 0 0 auto;
+  transition: transform var(--duration-fast) var(--ease-soft),
+    color var(--duration-fast) var(--ease-soft);
 }
 
 .card:hover .arrow,
 .card:focus-visible .arrow {
   transform: translateX(4px);
   color: var(--plum);
-}
-
-.service {
-  margin-top: auto;
-  color: var(--plum-deep);
-  font-size: 1.08rem;
-  font-family: var(--font-serif);
-  letter-spacing: -0.02em;
-  line-height: 1.15;
 }
