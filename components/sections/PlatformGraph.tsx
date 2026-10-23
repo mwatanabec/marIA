@@ -14,6 +14,8 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SectionReveal } from "@/components/motion/SectionReveal";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import styles from "./PlatformGraph.module.css";
+import { SiteLink } from "@/components/institutional/Elements";
+import brand from "@/components/institutional/Institutional.module.css";
 
 // Evita o warning de useLayoutEffect no SSR do Next.
 const useIsomorphicLayoutEffect =
@@ -190,7 +192,7 @@ export function PlatformGraph() {
   );
 
   return (
-    <section id="projetos" className="section" aria-labelledby="graph-heading">
+    <section id="projetos" className={`${brand.brand} section`} aria-labelledby="graph-heading">
       <div className="container">
         <SectionReveal className="section-head">
           <div>
@@ -300,6 +302,7 @@ export function PlatformGraph() {
             </span>
             <h3 className={styles.panelTitle}>{info.detailTitle ?? info.label}</h3>
             <p className={styles.panelText}>{info.description}</p>
+            {info.href && <SiteLink href={info.href} className={brand.textLink}>{info.type === "case" ? "Conhecer proposta" : "Saiba mais"} →</SiteLink>}
 
             {neighbors.length > 0 ? (
               <div className={styles.connections}>

@@ -1,29 +1,18 @@
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { AnimatedNetwork } from "@/components/motion/AnimatedNetwork";
-import { Hero } from "@/components/sections/Hero";
-import { PainSection } from "@/components/sections/PainSection";
-import { DifferentialsSection } from "@/components/sections/DifferentialsSection";
-import { AboutSection } from "@/components/sections/AboutSection";
-import { ServicesSection } from "@/components/sections/ServicesSection";
+import { HomeContent } from "@/components/institutional/HomeContent";
+import { SiteShell, ContactInvite } from "@/components/institutional/SiteShell";
+import { pageMetadata } from "@/components/institutional/metadata";
 import { PlatformGraph } from "@/components/sections/PlatformGraph";
-import { FinalCTA } from "@/components/sections/FinalCTA";
+import { ProjectsPreview } from "@/components/projetos/ProjectPortfolio";
+
+export const metadata = pageMetadata("Menos trabalho manual. Mais resultado.", "Automação de processos, integrações, IA aplicada e soluções sob medida para empresas. Conheça a MarIA e converse sobre seu processo.");
 
 export default function Home() {
   return (
-    <div className="page">
-      <AnimatedNetwork variant="orbit" className="bg-orbit" />
-      <Header />
-      <main id="main-content">
-        <Hero />
-        <PainSection />
-        <DifferentialsSection />
-        <AboutSection />
-        <ServicesSection />
-        <PlatformGraph />
-        <FinalCTA />
-      </main>
-      <Footer />
-    </div>
+    <SiteShell>
+      <HomeContent />
+      <ProjectsPreview />
+      <PlatformGraph />
+      <ContactInvite />
+    </SiteShell>
   );
 }

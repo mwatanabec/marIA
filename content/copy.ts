@@ -1,3 +1,6 @@
+import { offerings } from "./institutional";
+import { projectProposals, proposalNotice, proposalStatus } from "./projects";
+
 export const nav = [
   { label: "Início", href: "/" },
   { label: "Serviços", href: "/servicos" },
@@ -28,11 +31,11 @@ export const hero = {
   dashboard: {
     chip: "Mapa de solução",
     metricLabel: "Clareza operacional",
-    metricValue: "+82%",
+    metricValue: "Por etapas",
     bars: [34, 62, 48, 76, 92],
-    secondaryLabel: "Rotinas mapeadas",
-    secondaryValue: "24",
-    secondaryNote: "priorizadas por impacto, esforço e risco.",
+    secondaryLabel: "Prioridade",
+    secondaryValue: "Seu processo",
+    secondaryNote: "Escopo definido por impacto, esforço e risco.",
     networkCaption: "Conectar · Organizar · Implementar",
     networkHeadline: "Do caos operacional ao fluxo inteligente.",
   },
@@ -188,155 +191,40 @@ export const homeServices = {
   cta: { label: "Conhecer todos os serviços", href: "/servicos" },
 };
 
+/** Conteúdo de compatibilidade para os componentes antigos; a página usa o catálogo próprio. */
 export const projects = {
-  eyebrow: "Projetos anonimizados",
-  title: "Experiências que mostram método, tecnologia e impacto operacional.",
-  intro:
-    "Os exemplos são apresentados de forma anonimizada, preservando dados, marcas e informações internas das organizações envolvidas.",
-  cards: [
-    {
-      tag: "Governança",
-      title: "Plataforma para aplicações internas",
-      text: "Centralização de acessos, catálogo de soluções, controle por perfil e base preparada para evolução de novos módulos.",
-      items: [
-        "Governança de ferramentas internas.",
-        "Rastreabilidade e padronização.",
-        "Arquitetura preparada para crescer.",
-      ],
-    },
-    {
-      tag: "Operação",
-      title: "Conciliação e gestão de divergências",
-      text: "Processo padronizado para identificar, investigar e acompanhar divergências operacionais com histórico e indicadores.",
-      items: [
-        "Visão gerencial confiável.",
-        "Controle de acesso e auditoria.",
-        "Indicadores de aderência e resultado.",
-      ],
-    },
-    {
-      tag: "IA aplicada",
-      title: "Método para projetos com IA",
-      text: "Estruturação de contexto, lotes, documentação, validação e uso responsável da IA para acelerar entregas reais.",
-      items: ["Menos retrabalho.", "Mais previsibilidade.", "Conhecimento preservado."],
-    },
-  ],
+  eyebrow: "Propostas de demonstração",
+  title: "Possibilidades para reduzir o trabalho manual.",
+  intro: proposalNotice,
+  cards: projectProposals.map(project => ({
+    tag: project.category, title: project.title, text: project.description, items: [...project.features],
+  })),
 };
 
-/**
- * Página dedicada /projetos — estrutura inicial. Reaproveita os cases
- * anonimizados de `projects` (grid + hero) e segue o mesmo padrão de /servicos:
- * hero "capa escura" + seções modulares + FinalCTA. A copy de meta/hero/finalCta
- * vive aqui para poder evoluir sem tocar nos componentes. Próximo passo (outro
- * chat): aprofundar cases, adicionar novos e refinar o layout.
- */
 export const projectsPage = {
-  meta: {
-    title: "Projetos | MarIA Consultoria",
-    description:
-      "Experiências anonimizadas que mostram método, tecnologia e impacto operacional — de plataformas internas a projetos com IA aplicada.",
-  },
+  meta: { title: "Projetos e possibilidades | MarIA", description: proposalNotice },
   hero: {
-    eyebrow: "Projetos e experiências",
-    title: "Projetos que mostram método, tecnologia e impacto real.",
-    subtitle:
-      "Experiências desenvolvidas em organização de processos, automação e IA aplicada.",
-    support:
-      "Os projetos são apresentados de forma anonimizada, como demonstração de capacidade técnica, visão de processo e execução — sem expor dados, marcas ou ativos internos das organizações envolvidas.",
-    ctaPrimary: {
-      label: "Conversar sobre um desafio parecido",
-      message:
-        "Olá! Vim pela página de Projetos da MarIA Consultoria e gostaria de conversar sobre um desafio parecido na minha empresa.",
-    },
-    ctaSecondary: { label: "Ver projetos", href: "#projetos" },
+    eyebrow: "Propostas de demonstração", title: "Novos caminhos para sua operação.",
+    subtitle: "Explore possibilidades de automação, integração, dados e IA aplicada.",
+    support: proposalNotice,
+    ctaPrimary: { label: "Conversar sobre meu processo", message: "Olá! Gostaria de conversar sobre meu processo." },
+    ctaSecondary: { label: "Ver propostas", href: "#projetos" },
   },
   cases: {
-    eyebrow: "Portfólio",
-    title: "Projetos anonimizados, do desafio ao impacto.",
-    intro:
-      "Experiências apresentadas de forma anonimizada, do desafio ao resultado, para demonstrar capacidade técnica, visão de processo e execução — sem expor dados, marcas ou ativos internos das organizações envolvidas.",
-    contextLabel: "Contexto",
-    problemLabel: "Desafio",
-    solutionLabel: "Solução",
-    deliverablesLabel: "Principais entregas",
-    impactLabel: "Impacto",
-    draftLabel: "Rascunho · revisar",
-    items: [
-      {
-        id: "conciliador-de-estoque",
-        glyph: "▦",
-        draft: false,
-        title: "Conciliador de Estoque",
-        category: "Produto interno · Logística",
-        subtitle:
-          "Produto interno para padronização, rastreabilidade e gestão da conciliação entre a visão do cliente e a visão do sistema de armazém.",
-        tags: ["Produto interno", "Operações", "Logística", "Dados", "Automação", "Dashboard", "Estoque"],
-        reviewNote: "",
-        context:
-          "Operação logística multifilial com a necessidade de conciliar o estoque entre a visão do cliente e a visão registrada no sistema de armazém. A oportunidade era trazer mais padronização, rastreabilidade, visão gerencial e acompanhamento estruturado de um processo recorrente entre várias unidades.",
-        problem:
-          "A conciliação de estoque é um processo crítico para a operação. Com múltiplas unidades, clientes e formatos de arquivo, era preciso centralizar informações, acompanhar aderência, medir acuracidade, controlar metas e prazos de atendimento e registrar divergências de forma padronizada — reduzindo a dependência de controles manuais dispersos.",
-        solution:
-          "Foi desenvolvido um produto interno, hoje em produção: uma plataforma web corporativa que importa e normaliza os arquivos, aplica a lógica de conciliação entre cliente e sistema de armazém, mantém o histórico das execuções e consolida tudo em painéis executivos com indicadores de aderência, acuracidade, metas e prazos.",
-        deliverables: [
-          "Plataforma web corporativa completa (do que o usuário vê à base de dados por trás), em produção.",
-          "Controle de acesso por perfil.",
-          "Importação e normalização de arquivos de diferentes formatos.",
-          "Lógica de conciliação entre a visão do cliente e o sistema de armazém.",
-          "Histórico de execuções e gestão de divergências e ocorrências.",
-          "Painéis executivos com aderência, acuracidade, metas e prazos.",
-          "Implantação em produção, com evolução acompanhada pelo uso real das filiais.",
-        ],
-        impact: [
-          "Mais rastreabilidade em um processo crítico da operação.",
-          "Visão gerencial padronizada entre as unidades.",
-          "Menor dependência de controles manuais dispersos.",
-          "Base estruturada e preparada para evolução contínua.",
-        ],
-      },
-      {
-        // Case CIOT — apresentado de forma anonimizada, como demonstração de
-        // capacidade. Texto validado.
-        id: "ciot",
-        glyph: "◫",
-        draft: false,
-        title: "CIOT",
-        category: "Automação · Transporte",
-        subtitle:
-          "Solução digital para organizar e automatizar o processo de CIOT em operações de transporte, com mais rastreabilidade e conformidade.",
-        tags: ["Automação", "Transporte", "Operações", "Dados", "Compliance", "Integração", "Processo"],
-        reviewNote: "",
-        context:
-          "Ambiente corporativo de logística e transporte, em que a operação envolvendo o CIOT (Código Identificador da Operação de Transporte) fazia parte de uma rotina recorrente, relacionada às áreas operacionais e de transporte e à contratação e ao pagamento de frete.",
-        problem:
-          "Processo apoiado em etapas manuais e controles descentralizados, com baixa rastreabilidade, risco de retrabalho e dificuldade de consulta, acompanhamento e conferência das operações.",
-        solution:
-          "Solução digital para organizar e automatizar o processo de CIOT — centralizando registros, padronizando o fluxo e facilitando a consulta, o acompanhamento e a conferência das operações de transporte.",
-        deliverables: [
-          "Fluxo digital padronizado para o processo de CIOT.",
-          "Centralização dos registros e histórico das operações.",
-          "Automação de etapas manuais e conferências.",
-          "Integração com sistemas de transporte e contratação de frete.",
-          "Painel de acompanhamento, consulta e indicadores.",
-        ],
-        impact: [
-          "Mais rastreabilidade e conformidade no processo.",
-          "Redução de retrabalho e de controles manuais.",
-          "Consulta e acompanhamento mais ágeis.",
-          "Processo padronizado e auditável.",
-        ],
-      },
-    ],
+    eyebrow: "Propostas", title: "Problemas comuns, possibilidades de solução.", intro: proposalNotice,
+    contextLabel: "Para quem", problemLabel: "Problema", solutionLabel: "Proposta",
+    deliverablesLabel: "Recursos previstos", impactLabel: "Benefícios potenciais", draftLabel: proposalStatus,
+    items: projectProposals.map(project => ({
+      id: project.slug, glyph: "↗", draft: true, title: project.title, category: project.category,
+      subtitle: project.description, tags: [project.category], reviewNote: proposalNotice,
+      context: project.audience, problem: project.problem, solution: project.description,
+      deliverables: [...project.features], impact: [...project.benefits],
+    })),
   },
   finalCta: {
-    title: "Tem um desafio parecido na sua operação?",
-    subtext:
-      "Comece com uma conversa para entender a dor, o contexto e o caminho mais adequado para a sua operação.",
-    ctaPrimary: {
-      label: "Agendar conversa",
-      message:
-        "Olá! Vim pela página de Projetos da MarIA Consultoria e gostaria de agendar uma conversa.",
-    },
+    title: "Qual processo merece um novo jeito de funcionar?",
+    subtext: "Conte como essa necessidade aparece na sua rotina.",
+    ctaPrimary: { label: "Conversar sobre meu processo", message: "Olá! Vim pela página de Projetos e gostaria de conversar sobre meu processo." },
     ctaSecondary: { label: "Conhecer os serviços", href: "/servicos" },
   },
 };
@@ -593,12 +481,7 @@ export const siteMeta = {
     "A MarIA Consultoria ajuda empresas a transformar processos manuais em soluções digitais com estratégia, automação e IA aplicada com responsabilidade.",
 };
 
-/**
- * Grafo de conhecimento da plataforma MarIA (estilo Obsidian Graph View).
- * Cada nó tem posição fixa e curada num viewBox 1000×620. As arestas contam a
- * história: núcleo → método/serviços/diferenciais → e os projetos conectados ao
- * método e serviço que os produziram. Descrições reutilizam a copy oficial.
- */
+/** Mapa de serviços e propostas, sem atribuição de resultados ou clientes. */
 export type GraphNodeType = "core" | "method" | "service" | "case" | "differential";
 
 export type GraphNode = {
@@ -610,125 +493,44 @@ export type GraphNode = {
   x: number;
   y: number;
   description: string;
+  href?: string;
 };
 
 export const platformGraph = {
-  eyebrow: "Mapa da plataforma",
-  title: "Método, serviços e projetos — conectados em um só mapa.",
-  intro:
-    "Cada peça da MarIA conversa com as outras. Passe o mouse ou toque em um nó para ver como o método, os serviços e os resultados reais se conectam.",
-  hint: "Dica: arraste os nós para reorganizar o mapa.",
+  eyebrow: "Conhecimento em conexão",
+  title: "Método, serviços e possibilidades em um só mapa.",
+  intro: "Explore como cada problema se conecta ao Método MARIA e às frentes de serviço. As propostas são demonstrações planejadas, ainda sem aplicações disponíveis ou resultados de clientes.",
+  hint: "Dica: selecione um nó para explorar suas conexões. Você também pode arrastá-lo.",
   hintTouch: "Dica: toque em um nó para ver os detalhes da conexão.",
   defaultId: "maria",
   nodes: [
-    {
-      id: "maria",
-      label: "MarIA",
-      type: "core",
-      primary: true,
-      x: 500,
-      y: 300,
-      description:
-        "O núcleo que conecta estratégia, processo, tecnologia e IA aplicada com responsabilidade.",
-    },
-    {
-      id: "diferenciais",
-      label: "Diferenciais",
-      type: "differential",
-      primary: true,
-      x: 500,
-      y: 110,
-      description: differentials.quote,
-    },
-    {
-      id: "metodo",
-      label: "Método MARIA",
-      type: "method",
-      primary: true,
-      x: 250,
-      y: 245,
-      description: method.intro,
-    },
-    {
-      id: "servicos",
-      label: "Serviços",
-      type: "service",
-      primary: true,
-      x: 750,
-      y: 245,
-      description: servicesPage.offerings.intro,
-    },
-    { id: "mapear", label: "Mapear", type: "method", primary: false, x: 120, y: 150, description: method.steps[0].text },
-    { id: "analisar", label: "Analisar", type: "method", primary: false, x: 95, y: 265, description: method.steps[1].text },
-    { id: "registrar", label: "Registrar", type: "method", primary: false, x: 130, y: 375, description: method.steps[2].text },
-    { id: "implementar", label: "Implementar", type: "method", primary: false, x: 215, y: 450, description: method.steps[3].text },
-    { id: "acompanhar", label: "Acompanhar", type: "method", primary: false, x: 330, y: 440, description: method.steps[4].text },
-    { id: "capacitacaoEmpresas", label: "Capacitação", detailTitle: servicesPage.offerings.cards[0].title, type: "service", primary: false, x: 880, y: 150, description: servicesPage.offerings.cards[0].pitch },
-    { id: "timesTecnicos", label: "Times técnicos", detailTitle: servicesPage.offerings.cards[1].title, type: "service", primary: false, x: 905, y: 265, description: servicesPage.offerings.cards[1].pitch },
-    { id: "produtosInternos", label: "Produto interno", detailTitle: servicesPage.offerings.cards[2].title, type: "service", primary: false, x: 870, y: 375, description: servicesPage.offerings.cards[2].pitch },
-    { id: "automacoes", label: "Automações", detailTitle: servicesPage.offerings.cards[3].title, type: "service", primary: false, x: 785, y: 450, description: servicesPage.offerings.cards[3].pitch },
-    { id: "acompanhamento", label: "Evolução", detailTitle: servicesPage.offerings.cards[4].title, type: "service", primary: false, x: 670, y: 445, description: servicesPage.offerings.cards[4].pitch },
-    {
-      id: "caseA",
-      label: "Plataforma interna",
-      detailTitle: projects.cards[0].title,
-      type: "case",
-      primary: true,
-      x: 375,
-      y: 530,
-      description: projects.cards[0].text,
-    },
-    {
-      id: "caseB",
-      label: "Conciliação",
-      detailTitle: projects.cards[1].title,
-      type: "case",
-      primary: true,
-      x: 500,
-      y: 565,
-      description: projects.cards[1].text,
-    },
-    {
-      id: "caseC",
-      label: "Método com IA",
-      detailTitle: projects.cards[2].title,
-      type: "case",
-      primary: true,
-      x: 625,
-      y: 530,
-      description: projects.cards[2].text,
-    },
+    { id: "maria", label: "MarIA", type: "core", primary: true, x: 500, y: 300,
+      description: "Automação de processos e soluções inteligentes, com entendimento da operação e direção humana.", href: "/sobre" },
+    { id: "diferenciais", label: "Diferenciais", type: "differential", primary: true, x: 500, y: 110, description: differentials.quote, href: "/sobre" },
+    { id: "metodo", label: "Método MARIA", type: "method", primary: true, x: 250, y: 245, description: method.intro, href: "/metodo" },
+    { id: "servicos", label: "Serviços", type: "service", primary: true, x: 750, y: 245, description: "Automações rápidas, integrações, IA aplicada e soluções sob medida, com escopo proporcional ao processo.", href: "/servicos" },
+    ...method.steps.map((step, index) => ({
+      id: step.title.toLowerCase(), label: step.title, type: "method", primary: false,
+      x: [120, 95, 130, 215, 330][index], y: [150, 265, 375, 450, 440][index],
+      description: step.text, href: "/metodo",
+    })),
+    ...offerings.map((offering, index) => ({
+      id: offering.id, label: offering.shortName, detailTitle: offering.name, type: "service", primary: false,
+      x: [880, 905, 870, 785][index], y: [150, 265, 375, 450][index],
+      description: offering.description, href: `/servicos#${offering.id}`,
+    })),
+    ...projectProposals.map((project, index) => ({
+      id: project.slug, label: ["Pendências", "Conferência", "Integração", "Relatórios", "Indicadores"][index],
+      detailTitle: project.title, type: "case", primary: true,
+      x: [160, 330, 500, 670, 840][index], y: [530, 560, 570, 560, 530][index],
+      description: `${proposalStatus}. ${project.description}`, href: `/projetos/${project.slug}`,
+    })),
   ] as GraphNode[],
   edges: [
-    ["maria", "metodo"],
-    ["maria", "servicos"],
-    ["maria", "diferenciais"],
-    ["metodo", "servicos"],
-    ["metodo", "mapear"],
-    ["metodo", "analisar"],
-    ["metodo", "registrar"],
-    ["metodo", "implementar"],
-    ["metodo", "acompanhar"],
-    ["servicos", "capacitacaoEmpresas"],
-    ["servicos", "timesTecnicos"],
-    ["servicos", "produtosInternos"],
-    ["servicos", "automacoes"],
-    ["servicos", "acompanhamento"],
-    ["diferenciais", "caseA"],
-    ["diferenciais", "caseB"],
-    ["diferenciais", "caseC"],
-    ["caseA", "produtosInternos"],
-    ["caseA", "maria"],
-    ["caseB", "produtosInternos"],
-    ["caseB", "automacoes"],
-    ["caseC", "timesTecnicos"],
-    ["caseC", "metodo"],
+    ["maria", "metodo"], ["maria", "servicos"], ["maria", "diferenciais"], ["metodo", "servicos"],
+    ...method.steps.map(step => ["metodo", step.title.toLowerCase()]),
+    ...offerings.map(offering => ["servicos", offering.id]),
+    ...projectProposals.flatMap(project => [[project.slug, project.service], [project.slug, "metodo"]]),
   ] as [string, string][],
-  typeLabels: {
-    core: "Núcleo",
-    method: "Método",
-    service: "Serviço",
-    case: "Projeto",
-    differential: "Diferencial",
-  } as Record<GraphNodeType, string>,
+  typeLabels: { core: "Núcleo", method: "Método", service: "Serviço", case: "Proposta de demonstração", differential: "Diferencial" } as Record<GraphNodeType, string>,
 };

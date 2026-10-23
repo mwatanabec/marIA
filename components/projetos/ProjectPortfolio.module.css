@@ -1,0 +1,89 @@
+.hero { padding-block: 55px 35px; }
+.heroGrid { display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: 45px; }
+.hero h1 { margin-block: 24px; font-size: clamp(2.9rem, 5.5vw, 5.1rem); }
+.lead { color: var(--brand-muted); font-size: 1.05rem; max-width: 590px; }
+.heroVisual { position: relative; min-width: 0; }
+.heroVisual::before { content: ""; position: absolute; inset: 12% 0 10%; border: 1px solid var(--brand-rose); border-radius: 50%; background: var(--brand-blush); opacity: .6; }
+.heroMari { position: relative; }
+.visualNote { position: absolute; inset: auto 0 4%; margin-inline: auto; width: fit-content; max-width: 100%; display: flex; gap: 14px; align-items: center; background: var(--brand-cream); padding: 16px; border: 1px solid var(--brand-line); border-radius: 16px; font-size: .82rem; }
+.visualNote svg { flex-shrink: 0; color: var(--brand-plum); }
+.visualNote small { display: block; color: var(--brand-muted); margin-top: 4px; font-size: .67rem; }
+.catalog { padding-top: 60px; }
+.sectionHead { display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: end; margin-bottom: 30px; }
+.sectionHead h2 { margin-top: 18px; }
+.sectionHead > p { color: var(--brand-muted); max-width: 450px; }
+.notice { padding: 22px 26px; border-left: 3px solid var(--brand-accent); border-radius: 0 16px 16px 0; background: var(--brand-lavender); margin-bottom: 32px; }
+.notice strong { color: var(--brand-plum); font-size: .85rem; }
+.notice p { margin-top: 6px; color: var(--brand-charcoal); font-size: .85rem; max-width: 950px; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.card { padding: 32px; background: #fff; border: 1px solid var(--brand-line); border-radius: 24px; display: flex; flex-direction: column; scroll-margin-top: 120px; min-width: 0; }
+.cardTop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 26px; }
+.icon { width: 56px; height: 56px; display: grid; place-items: center; background: var(--brand-lavender); color: var(--brand-plum); border-radius: 16px; }
+.number { font-size: .78rem; font-weight: 600; color: var(--brand-muted); }
+.cardMeta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-size: .68rem; color: var(--brand-plum); margin-bottom: 18px; }
+.status { display: inline-block; width: fit-content; padding: 6px 10px; border: 1px solid var(--brand-line); border-radius: 100px; font-size: .67rem; font-weight: 600; color: var(--brand-plum); background: var(--brand-cream); }
+.card h3 { font-size: 1.8rem; }
+.pain { margin-top: 17px; font-weight: 600; font-size: .93rem; }
+.description { margin-top: 10px; color: var(--brand-muted); font-size: .86rem; }
+.flow { margin: 28px 0; padding: 20px; background: var(--brand-cream); border-radius: 16px; border: 1px solid var(--brand-line); }
+.flow figcaption { font-size: .64rem; color: var(--brand-muted); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 20px; }
+.flow ol { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.flow li { display: flex; flex-direction: column; gap: 10px; position: relative; font-size: .74rem; font-weight: 500; line-height: 1.5; }
+.stepNumber { display: grid; place-items: center; width: 30px; height: 30px; color: var(--brand-plum); background: var(--brand-lavender); border-radius: 50%; font-size: .65rem; font-weight: 700; }
+.connector { position: absolute; top: 5px; right: -10px; color: var(--brand-accent); }
+.cardActions { margin-top: auto; display: flex; align-items: flex-start; flex-direction: column; gap: 14px; padding-top: 6px; }
+.cardActions a { display: inline-flex; gap: 9px; align-items: center; }
+.cardActions svg { flex-shrink: 0; }
+.contactLink { font-size: .77rem; color: var(--brand-plum); min-height: 36px; }
+.contactLink:hover { text-decoration: underline; }
+.evidence, .detailGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+.evidence h2, .detailGrid h2 { margin-top: 20px; }
+.evidence p + p { margin-top: 16px; }
+.evidence a { margin-top: 25px; }
+.previewNotice { color: var(--brand-muted); font-size: .83rem; margin-bottom: 25px; }
+.detailHero { padding-block: 40px 60px; }
+.breadcrumb { display: flex; flex-wrap: wrap; gap: 12px; color: var(--brand-muted); font-size: .77rem; margin-bottom: 48px; }
+.breadcrumb a { text-decoration: underline; text-underline-offset: 4px; }
+.detailHeading { display: flex; justify-content: space-between; gap: 30px; align-items: flex-start; }
+.detailHeading h1 { margin-block: 20px; font-size: clamp(2.9rem, 5.3vw, 5rem); max-width: 850px; }
+.detailHeading > .status { flex-shrink: 0; }
+.detailNotice { margin-top: 26px; max-width: 850px; color: var(--brand-muted); font-size: .86rem; }
+.detailHero .flow { margin-top: 40px; background: #fff; padding: 30px; }
+.detailHero .flow li { font-size: 1rem; }
+.detailGrid > div { min-width: 0; }
+.detailGrid p { margin-top: 20px; font-size: .94rem; color: var(--brand-muted); }
+.detailGrid h3 { margin-top: 30px; font-size: 1.15rem; }
+.scope { padding: 30px; border-radius: 24px; background: var(--brand-lavender); }
+.scope h2 { font-size: 2rem; }
+.scope ul, .benefits { list-style: none; padding: 0; margin: 25px 0 0; }
+.scope li, .benefits li { padding-block: 16px; border-bottom: 1px solid var(--brand-line); font-size: .94rem; line-height: 1.6; }
+.scope li:last-child { border-bottom: 0; }
+.projectCta h2 { margin-block: 20px; }
+.projectCta > p { max-width: 580px; color: var(--brand-muted); }
+@media (max-width: 1000px) {
+  .heroGrid { gap: 20px; grid-template-columns: 1.15fr .85fr; }
+  .hero h1 { font-size: clamp(2.8rem, 5.7vw, 4.5rem); }
+  .sectionHead, .evidence, .detailGrid { gap: 35px; }
+  .card { padding: 24px; }
+  .detailHeading { flex-direction: column-reverse; gap: 20px; }
+}
+@media (max-width: 700px) {
+  .hero { padding-top: 40px; }
+  .heroGrid, .sectionHead, .grid, .evidence, .detailGrid { grid-template-columns: 1fr; }
+  .heroVisual { max-width: 330px; margin-inline: auto; }
+  .hero h1 { font-size: clamp(2.6rem, 10vw, 3.8rem); }
+  .catalog { padding-top: 25px; }
+  .sectionHead { gap: 22px; }
+  .notice { padding: 20px; }
+  .card h3 { font-size: 1.65rem; }
+  .card { padding: 22px; }
+  .flow { padding: 16px; }
+  .flow ol { gap: 15px; }
+  .flow li { font-size: .7rem; }
+  .detailHero .flow { padding: 20px; }
+  .detailHero .flow li { font-size: .8rem; }
+  .detailHeading h1 { font-size: 2.8rem; overflow-wrap: anywhere; }
+  .breadcrumb { margin-bottom: 32px; }
+  .scope { padding: 24px; }
+  .scope h2 { font-size: 1.7rem; }
+}
